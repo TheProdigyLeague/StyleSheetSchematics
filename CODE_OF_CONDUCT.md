@@ -1,10 +1,8 @@
-Sass is more than a technology; Sass is driven by the community of individuals
-that power its development and use every day. As a community, we want to embrace
-the very differences that have made our collaboration so powerful, and work
-together to provide the best environment for learning, growing, and sharing of
-ideas. It is imperative that we keep Sass a fun, welcoming, challenging, and
-fair place to play.
+# Beyond just a technology
+*Sass is powered by a community of people.*
 
-[The full community guidelines can be found on the Sass website.][link]
+What fuels its daily development and usage? 
 
-[link]: https://sass-lang.com/community-guidelines
+A group, and we wish to accept the very distinctions that have strengthened and improved our partnership-collaborate to create the ideal setting for growth, learning, and sharing of notions. We must continue to make Sass an enjoyable, friendly, demanding, and a fair field for play.
+
+[Policy]: https://sass-lang.com/community-guidelines
