@@ -1,4 +1,7 @@
-# Contributing
+# JavaScript_WebApplicationProgramming-Interface(jsapi)
+[API's for Dummies]("https://en.wikipedia.org/wiki/API")
+
+<img width="110" alt="NASA" src="https://github.com/TheProdigyLeague/StyleSheetSchematics/assets/30985576/9177f209-5d8c-4d6c-bd71-736e96398034">
 
 The SASS project follows The [FULL PROCESS] policy. And, must follow The [FAST-TRACK] process.
 
@@ -121,128 +124,52 @@ _defining syntax refer productions from css specs_
 
 § Code blocks in Markdown. Variants of [LIT_PROG]("https://en.wikipedia.org/wiki/Literate_programming") Specs prosed to be well-formatted with Headings and Cross-Links. (Still allows type declarations to be statically analyzed and auto-formatted) Spec editors:
 `Node.js
+
 npm -generate $true .d, .ts
     handle task
 `
 <break>
+
 `bash
+
 extensions .d, .ts, .md
+
 `
-§ 
 
-A JS API proposal has the same introduction, Background, and Summary sections as
-a normal language proposal. Rather than Syntax and Semantics sections, it should
-define the new behavior as TypeScript declarations, using [declaration merging]
-when possible and prose otherwise to describe the changes to the existing API.
-If a Deprecation Process section is necessary, it should be written after the
-API.
+![jsAPI](https://github.com/TheProdigyLeague/StyleSheetSchematics/assets/30985576/30ab046c-6a47-4aa0-b512-22573f6ec8cf)
 
-[declaration merging]: https://www.typescriptlang.org/docs/handbook/declaration-merging.html
-
-§ The new API should formally describe the behavior of the compiler. These should
-be written *as a specification*, rather than *as documentation*—that is, they
-should explicitly specify the behavior of the implementation in enough detail to
-ensure that multiple implementations will not produce different user-visible
-behavior.
-
-§ When defining new types or members, each type should have its own top-level
-section with each of its members should have a subsection beneath it.
-Module-level fields should go in the "Fields" top-level section.
+§ JS API has norm-lang-prose. Rather than Syntaxical and Semantic. (Declaration merging) when prose to describe mods that exist within api. If deprecated then written after api. [Declarations]("https://www.typescriptlang.org/docs/handbook/declaration-merging.html") Which formally describes compiler behavior. Written as _specs_ rather than *docs* —explicitly specifies implemented behavior enough to detail and ensure implementations does not produce diffs-usr Visible. Defining new _types/members_ Has it's own top-level. Each member has subsection. _module-level/field_
 
 #### Embedded Protocol
 
-§ Most proposals that affect the JavaScript API will also need to update the
-[embedded protocol], which is used to communicate between the Dart Sass compiler
-and the [Node.js embedded host] (as well as embedded hosts in other languages).
+![java_script_applicationProgrammingInt](https://github.com/TheProdigyLeague/StyleSheetSchematics/assets/30985576/61aa33ab-5130-4b3b-8b73-5afb263a1bac)
 
-§ Although the protocol buffer definition format isn't automatically checked from
-Markdown the way TypeScript is, you should still include it in code blocks in
-your proposal under the "Embedded Protocol" section.
-
-[embedded protocol]: spec/embedded-protocol.md
-[Node.js embedded host]: https://github.com/sass/embedded-host-node
+§ JavaScript API's also need embedded protocols. Which communicates between compiler (DART-SASS) and Node.js (embed-HOST) protocol-buffer definition-format. From Markdown and TypeScript. (You) include in code_blocks in prose under "embed proto". [SPECS]("spec/embedded-protocol.md") | [NODE.JS]("https://github.com/sass/embedded-host-node")
 
 ## Fast Track
 
-§ Some features are too small and too unlikely to be controversial to warrant the
-full-fledged proposal process. Features like that can be *fast-tracked*, a
-process that requires less time and less reviewer energy than the normal flow.
+§ When a new feature is too small and not controversial. It warrants full-fledge prose procs. *fast-track* (Requires less time to review...)
 
-A feature is eligible for fast-tracking if it:
+Requirements:
 
-* Is simple enough that it's unlikely to need to change substantially as a
-  result of review.
+* Simple language
 
-* Modifies an existing specification in the `spec/` directory. It's fair game
-  for a new spec to be written or ported from [the `accepted/` directory] in
-  order for a proposal to be fast-tracked, but that must be done before the
-  proposal can move to step 2.
+* `\mod.spec/dir/port/accepted`
 
-* Requires very little modification of the specification and of the
-  implementation. Ideally a fast-tracked feature requires very little
-  modification of the sass-spec repo as well, but this may not always be
-  feasible for features with many small edge cases or that happen to appear in
-  many specs.
+* must be done before prose can move to second step
 
-* Requires no deprecations and introduces no backwards incompatibilities.
+* very little mod*spec_imp (Requires little work)
 
-§ The proposal author makes the initial decision about whether or not to
-fast-track a feature. However if anyone (whether they're a member of the Sass
-team or just a community member) requests that that feature be moved to the full
-process, it must be moved so that it can have a full discussion.
-
-The fast-track process works as follows:
-
-1. The feature is informally discussed on [the issue tracker][]. Once the Sass
-   team has agreed that a feature is desirable, it's marked as [Planned][] and
-   can move to step 2.
-
-2. Issues are opened for each individual implementation to add the feature.
-   These issues should link to the feature's main issue in the [sass/sass][]
-   issue tracker, and that issue should link back to the implementation issues.
-
-   Three pull requests are sent out concurrently.
-
-   1. A formal proposal is written for the feature as a pull request to this
-      repository, where the Sass team will discuss its specifics with the
-      author. *Unlike the full proposal process*, this pull request directly
-      modifies the appropriate spec in `specs/`.
-
-   2. A pull request is sent to [sass-spec][] that adds or updates specs for the
-      new feature. The new specs should have an `options.yml` file that marks
-      them as ignored for LibSass. For example:
-
-      ```yaml
-      ---
-      :ignore_for:
-      - libsass
-      ```
-
-      This pull request message should include `[skip dart-sass]`. This will
-      cause it not to run Dart Sass tests, which would otherwise fail because
-      the implementation of the new feature hasn't landed yet.
-
-   3. A pull request is sent to [Dart Sass][] that implements the new feature.
-      This pull request's message should link to the sass-spec pull request (for
-      example, `See sass/sass-spec#1293`). This will cause it to run against the
-      specs in that pull request and so test your new feature.
-
-§   These pull requests should remain open for at least two full workdays to
-   ensure any interested parties have a chance to comment on them. After that
-   point, *and* after all three pull requests have been approved by reviewers,
-   they should be landed simultaneously.
+* non-deprecated (no backwards incompatibilities)
 
 ## Emergency Track
 
-§ Despite our best efforts, every now and then a new language change will
-unintentionally breaks existing Sass stylesheets. In order to get users unbroken
-as quickly as possible, we have a special track for changes that's highly
-constrained but requires minimal up-front review.
+§ Sometimes, despite our best efforts, a new language change will inadvertently damage pre-existing Sass stylesheets. We have a unique track for updates that is highly limited but requires minimum upfront approval in order to get people back online as soon as feasible.
 
-> Note: Bug fixes where the wording of the spec is inconsistent or clearly
-> doesn't match the intended behavior can just be fixed directly and don't need
-> an emergency-track proposal. This is only necessary for situations where the
-> intended behavior is unexpectedly harmful in some way.
+> BUG-FIXES of spec is inconsistent.
+> Doesn't match behavior
+> Doesn't need emergency-track
+> Is necessary for situations where intended behvaior is harmful 
 
 A change is eligible for the emergency track if it:
 
@@ -253,33 +180,6 @@ A change is eligible for the emergency track if it:
 
 * Doesn't add any *new* behavior in addition to the reversion.
 
-The emergency track should only be used by Sass team members. The process works
-as follows:
-
-1. Three pull requests are sent out concurrently:
-
-   1. A formal proposal is written for the feature as a pull request to this
-      repository. *Unlike the full proposal process*, this pull request directly
-      modifies the appropriate spec in `specs/`.
-
-   2. A pull request is sent to [sass-spec] that adds or updates specs for the
-      change. This pull request message should include `[skip dart-sass]`.
-
-   3. A pull request is sent to [Dart Sass] that implements the change. This
-      pull request's message should link to the sass-spec pull request (for
-      example, `See sass/sass-spec#1293`).
-
-2. These pull requests may be merged as soon as they're approved. If the issue
-   appears outside of work hours, it may be merged without review, but a *post
-   facto* review should be done as soon as possible.
-
 ## Large Language Models
 
-§ Do not submit any code or prose written or modified by large language models or
-"artificial intelligence" such as GitHub Copilot or ChatGPT to this project.
-These tools produce code that looks plausible, which means that not only is it
-likely to contain bugs those bugs are likely to be difficult to notice on
-review. In addition, because these models were trained indiscriminately and
-non-consensually on open-source code with a variety of licenses, it's not
-obvious that we have the moral or legal right to redistribute code they
-generate.
+§ Please refrain from submitting any prose or code to this project that has been created or altered by huge language models or "artificial intelligence" programs like ChatGPT or GitHub Copilot. These techniques generate code that appears realistic, which increases the likelihood that it contains Bugs—that will probably be hard to find during review. Furthermore, it's not clear if we have the moral or legal right to release the code these models generate because they were trained indiscriminately and non-consensually on open-source material with a range of licenses throughout training.
