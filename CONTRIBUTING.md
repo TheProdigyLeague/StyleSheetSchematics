@@ -80,7 +80,7 @@ NOTES: inline normative sections using [blockquotes]("https://daringfireball.net
 
 * **Summary**
 
-§  User Friendly - Concise summary of behaviors proposed. Not needed to be explicit. Cornerstone features and just gives users a general overview of how ti works.
+§  User Friendly - Concise summary of behaviors proposed. Not needed to be explicit. Cornerstone features and just gives users a general overview of how it works.
 [Escaping]("accepted/identifier-escapes.md#summary")
 
 
