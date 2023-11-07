@@ -1,12 +1,11 @@
 # Contributing
 
-When we add a new feature to Sass, we want to make sure the feature is
-well-designed, clearly specified, feasible to implement, and that it meets the
-use-cases it's designed for. Although most features should follow the [full
-process][], very small features can follow the [fast-track process][] instead.
+The SASS project follows The [FULL PROCESS] policy. And, must follow The [FAST-TRACK] process.
 
 [full process]: #process
 [fast-track process]: #fast-track
+
+*A FIVE STEP PROCESS!!!*
 
 ## Table of Contents
 
@@ -22,154 +21,77 @@ process][], very small features can follow the [fast-track process][] instead.
 
 The process for adding a new feature works as follows:
 
-1. The feature is informally discussed on [the issue tracker][]. Most new
-   features come directly from use-cases brought up by Sass users, or new CSS
-   syntax that Sass needs to support. Once the Sass team has agreed that a
-   feature is desirable, it's marked as [Planned][] and can move to step 2.
+1.) This feature is informal. [ISSUES]("https://github.com/sass/sass/issues") New features come directly from The Community. Upon review from the Sass Team.
 
-   [the issue tracker]: https://github.com/sass/sass/issues
-   [Planned]: https://github.com/sass/sass/labels/Planned
+2.) Formal proposals is written for Features. Formatted PR. Upon review from the Sass Team.
+  
+a. implementations to add features. 
 
-2. A formal proposal is written for the feature, following the format [outlined
-   below](#proposal). This proposal is sent as a pull request, where the Sass
-   team will discuss its specifics with the author. If/when everyone agrees on a
-   first draft, the pull request will be accepted and the feature moves to step
-   3.
+3.) Public comments via Tweets @SassCSS[X]("https://twitter.com/SassCSS") And feedbacks from blog posts. Upon review from The Sass Team.
 
-   Step 2 is also where issues are opened for each individual implementation to
-   add the feature. These issues should link to the feature's main issue in the
-   [sass/sass][] issue tracker, and that issue should link back to the
-   implementation issues.
+` [versioning policy] 
+<proposal>.changes.md
+`
 
-   [sass/sass]: https://github.com/sass/sass
-
-3. Public comments are solicited for the feature, usually via a tweet from
-   [@SassCSS][]. If the feature is big enough, a blog post soliciting feedback
-   may also be written. Then we await comments and iterate on feedback for an
-   amount of time that varies based on the size of the feature and the amount of
-   feedback received.
-
-   [@SassCSS]: https://twitter.com/SassCSS
-
-   As the proposal is updated based on feedback, its draft number should be
-   increased according to the [versioning policy][] and changes should be logged
-   in a changelog file named `<proposal>.changes.md`. Once enough time has
-   elapsed and the Sass team is satisfied that all feedback is addressed, the
-   feature moves to step 4.
-
-   [versioning policy]: README.md#versioning-policy
-
-4. The proposal is marked as accepted and moved into [the `accepted/`
-   directory]. *This doesn't mean that the proposal is immutable*, but it does
-   mean that no major changes to its semantics are expected. At this point, it's
-   time to write [specs] for the new feature, in tandem with implementing it in
-   [Dart Sass] (since it's the reference implementation). Writing the specs
-   alongside an implementation helps ensure that the specs are accurate and
-   sensible, and that the implementation is correct.
+4.) Marked as accepted and moved. Written off. Alongside implementations for accuracy and sensibility.
 
    [the `accepted/` directory]: accepted
    [specs]: https://github.com/sass/sass-spec
    [Dart Sass]: https://github.com/sass/dart-sass
 
-   If the proposal affects the JS API and/or the embedded protocol, which are
-   stored in this repo, create a separate PR to update those as well so the
-   updated APIs can be used. This should not be included in the PR that marks
-   the proposal as accepted.
+§   Affecting JS API and/or embedded protocol. Must create seperate PRs for updates. 
 
-   The new specs should have an `options.yml` file that marks them as ignored
-   for LibSass. For example:
+```yaml
+options.yml
+:ignore_for:
+- libsass
+```
 
-   ```yaml
-   ---
-   :ignore_for:
-   - libsass
-   ```
-
-   Once the specs and the implementation are complete, they're sent as pull
-   requests to [sass-spec] and [Dart Sass], respectively. They need to have
-   special lines in their pull request messages in order to build properly:
+§   Upon implementation completion. MSFT sends as PR [sass-spec] | [Dart Sass] with special lines.
 
    [sass-spec]: https://github.com/sass/sass-spec
 
-   * The sass-spec pull request message should include `[skip dart-sass]`. This
-     will cause it not to run Dart Sass tests, which would otherwise fail
-     because the implementation of the new feature hasn't landed yet.
+§  PR includes `[skip dart-sass]` Causation is not run in Dart Sass TEST FAIL "NOT LANDED"
 
-   * The Dart Sass pull request's message should link to the sass-spec pull
-     request (for example, `See sass/sass-spec#1293`) as well as the sass/sass
-     pull request if one exists. This will cause it to run against the specs in
-     that pull request and so test your new feature.
+   * PR msg link _sass/sass-spec#1293_ sass/sass PR against specs in PR to TEST NEW! FEATURE
 
-   Once these pull requests land, the feature moves to step 5.
 
-5. The contents of the proposal are integrated into the `spec/` directory, and
-   become part of the official language spec. This step happens after the
-   initial implementation because the first implementation often reveals
-   shortcomings in the proposal itself, and it's much simpler to make fixes to
-   only one place.
+5.) Integration in _spec/dir_ and OFFICIAL LANGUAGE SPEC. 
+
+a. __init__ imp 1<sup>st</sup>
+
+§ Afterwards, revelation of shortcomings in proposal.
 
 ## Proposal
 
-A good feature proposal should make it possible for an average Sass user to
-understand and discuss the feature and the context around it, and possible for
-Sass maintainers to implement consistent and well-defined behavior. The
-following outline is designed to make satisfy these needs.
+§ Feature proposals make possible for avg. Sass usr to contextualize forums. For Maintenance to implement consistency and well-formatted code. 
+The following outlines are designed for needs: 
 
-A proposal must include at minimum a Summary and a Syntax *or* a Semantics
-section. Everything else is optional. Proposals may include additional sections,
-or divide a section into sub-sections, as necessary to make it clear and
-readable. All proposals should also include tables of contents that link to all
-their sections.
+a.) MUST INCLUDE MANDATORY MINIMUM SUMMARIES OF SYNTAX AND SEMANTICS
+optional: add-ons, sections, divisionaries, sub-sections, readability, table of contents, and/or links.
 
-Everything in sections that aren't explicitly marked as non-normative should be
-construed as part of the specification of the feature. Non-normative notes can
-be included inline in normative sections using [blockquotes][].
-
-[blockquotes]: https://daringfireball.net/projects/markdown/syntax#blockquote
-
-See [the `accepted/` directory][] for examples of proposals that have been
-accepted.
+b.) MUST EXPLICITLY MARK AS NON-NORMATIVE AND SHOULBE BE CONSTRUED AS SUCH. SPEC/FEATURE/non-normative
+NOTES: inline normative sections using [blockquotes]("https://daringfireball.net/projects/markdown/syntax#blockquote")
 
 * **Background**
 
-  This non-normative section describes the broader context for the feature. This
-  is particularly relevant for changes to existing syntax, and *especially* for
-  backwards-incompatible changes. It should explain Sass's current behavior, the
-  original reasoning behind that behavior, and why it's insufficient.
-
-  See [Plain CSS `min()` and `max()`][min-max background] for a good example of
-  a Background section.
-
-  [min-max background]: https://github.com/sass/sass/blob/main/accepted/min-max.md#background
+§  Non-normative - broader context for features. Relevant for changes existing towards syntaxical backwards-incompatible changes. Within the context of Sass's current behaviors. Original reasoning behind behavior for insufficiency.
+[backgrounds]("https://github.com/sass/sass/blob/main/accepted/min-max.md#background")
 
 * **Summary**
 
-  This non-normative section provides a concise, user-friendly summary of the
-  behavior being proposed. It doesn't need to be fully explicit about every
-  corner of the feature, it just needs to give users an idea of how it works and
-  what use-cases it addresses. Code examples are encouraged.
+§  User Friendly - Concise summary of behaviors proposed. Not needed to be explicit. Cornerstone features and just gives users a general overview of how ti works.
+[Escaping]("accepted/identifier-escapes.md#summary")
 
-  See [Escapes in Identifiers][] for a good example of a Summary section.
-
-  [Escapes in Identifiers]: accepted/identifier-escapes.md#summary
 
   * **Design Decisions**
 
-    This sub-section goes into detail about decisions that were made during the
-    design of the feature. It should describe alternatives that were considered,
-    and explain why the final decision was made the way it was.
-
-    See [Plain CSS `min()` and `max()`][min-max design] for a good example
-    of a Design Decisions section.
-
-  [min-max design]: accepted/min-max.md#design-decisions
+§    Design - Features and alternatives were considered and includes final decisions.
+[Designing Features]("accepted/min-max.md#design-decisions")
 
 * **Syntax**
 
-  This section describes the syntax of the feature being added, if it adds new
-  syntax to the language. The syntax should be written in [Backus-Naur form][],
-  with regular expression-style operators and the convention that nonterminals
-  are written in capitalized camel-case form. For example:
+§  Syntax - Adding new syntax to Sass. _Backus-Naur form_ WITH REGEX. (Expression-style operands) And conventional non-terminals as well as capitalized camel-case form.
 
   <x><pre>
   **MinMaxExpression** ::= CssMinMax | FunctionExpression
@@ -182,53 +104,31 @@ accepted.
   &#32;                  | Number
   </pre></x>
 
-  [Backus-Naur form]: https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form
-
-  Syntax definitions can also refer to productions from CSS specs. The proposal
-  should link to the specs in question.
-
-  See [Range-Context Media Features][] for an good example of a Syntax section.
-
-  [Range-Context Media Features]: accepted/media-ranges.md
+[Backus-Naur form]: https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form
+_defining syntax refer productions from css specs_
+[Range-Context]("accepted/media-ranges.md")
 
 * **Semantics**
 
-  This section describes the runtime behavior of the new feature. It may be
-  omitted if the feature only has to do with how the stylesheet is parsed. The
-  semantics section covers everything about how a stylesheet is evaluated,
-  including how imports are resolved and the behavior of built-in functions.
-
-  See [CSS Imports][css-imports semantics] for a good example of a Semantics section.
-
-  [css-imports semantics]: accepted/css-imports.md#semantics
+§ Describing runtime behavior of New Feature. Maybe omitted if feature has to do with stylesheet parsed. Semantics section covers everything about stylesheets evaluated including imports resolved and behavior of built-in funcs.
+[CSS IMPORT SEMANTICS]("accepted/css-imports.md#semantics")
 
 * **Deprecation Process**
 
-  All backwards-incompatible features should go through a deprecation process if
-  at all possible (see [Dart Sass's compatibility policy][]). This section
-  describes the details of that process, including what code will produce
-  deprecation warnings and how those warnings will indicate what the user should
-  do to make their stylesheet forwards-compatible.
+§ Backwards-incompatibility features go through deprecation. [Policy]("https://github.com/sass/dart-sass#compatibility-policy") | [Deprecation]("accepted/css-imports.md#deprecation-process") Descriptions of details of that process included. Code will produce deprecation warnings. Those warnings indicate what users should do about their stylesheet forward-compatibility.
 
-  [Dart Sass's compatibility policy]: https://github.com/sass/dart-sass#compatibility-policy
+### JavaScript API
 
-  See [CSS Imports][css-imports deprecation] for a good example of a Deprecation
-  Process section.
-
-  [css-imports deprecation]: accepted/css-imports.md#deprecation-process
-
-### JavaScript API Proposals
-
-Sass's shared JavaScript API is specified as TypeScript type declarations
-written as code blocks in Markdown files with the extension `.d.ts.md`. This is
-a variant of the [literate programming] style, which allows the specification
-(which is primarily prose) to be well-formatted with headings and cross-links,
-while still allowing the type declarations to be statically analyzed and
-automatically formatted. Spec editors can run `npm run tangle` to generate true
-`.d.ts` files, although this is typically handled automatically in the other npm
-tasks.
-
-[literate programming]: https://en.wikipedia.org/wiki/Literate_programming
+§ Code blocks in Markdown. Variants of [LIT_PROG]("https://en.wikipedia.org/wiki/Literate_programming") Specs prosed to be well-formatted with Headings and Cross-Links. (Still allows type declarations to be statically analyzed and auto-formatted) Spec editors:
+`Node.js
+npm -generate $true .d, .ts
+    handle task
+`
+<break>
+`bash
+extensions .d, .ts, .md
+`
+§ 
 
 A JS API proposal has the same introduction, Background, and Summary sections as
 a normal language proposal. Rather than Syntax and Semantics sections, it should
@@ -239,23 +139,23 @@ API.
 
 [declaration merging]: https://www.typescriptlang.org/docs/handbook/declaration-merging.html
 
-The new API should formally describe the behavior of the compiler. These should
+§ The new API should formally describe the behavior of the compiler. These should
 be written *as a specification*, rather than *as documentation*—that is, they
 should explicitly specify the behavior of the implementation in enough detail to
 ensure that multiple implementations will not produce different user-visible
 behavior.
 
-When defining new types or members, each type should have its own top-level
+§ When defining new types or members, each type should have its own top-level
 section with each of its members should have a subsection beneath it.
 Module-level fields should go in the "Fields" top-level section.
 
 #### Embedded Protocol
 
-Most proposals that affect the JavaScript API will also need to update the
+§ Most proposals that affect the JavaScript API will also need to update the
 [embedded protocol], which is used to communicate between the Dart Sass compiler
 and the [Node.js embedded host] (as well as embedded hosts in other languages).
 
-Although the protocol buffer definition format isn't automatically checked from
+§ Although the protocol buffer definition format isn't automatically checked from
 Markdown the way TypeScript is, you should still include it in code blocks in
 your proposal under the "Embedded Protocol" section.
 
@@ -264,7 +164,7 @@ your proposal under the "Embedded Protocol" section.
 
 ## Fast Track
 
-Some features are too small and too unlikely to be controversial to warrant the
+§ Some features are too small and too unlikely to be controversial to warrant the
 full-fledged proposal process. Features like that can be *fast-tracked*, a
 process that requires less time and less reviewer energy than the normal flow.
 
@@ -286,7 +186,7 @@ A feature is eligible for fast-tracking if it:
 
 * Requires no deprecations and introduces no backwards incompatibilities.
 
-The proposal author makes the initial decision about whether or not to
+§ The proposal author makes the initial decision about whether or not to
 fast-track a feature. However if anyone (whether they're a member of the Sass
 team or just a community member) requests that that feature be moved to the full
 process, it must be moved so that it can have a full discussion.
@@ -327,14 +227,14 @@ The fast-track process works as follows:
       example, `See sass/sass-spec#1293`). This will cause it to run against the
       specs in that pull request and so test your new feature.
 
-   These pull requests should remain open for at least two full workdays to
+§   These pull requests should remain open for at least two full workdays to
    ensure any interested parties have a chance to comment on them. After that
    point, *and* after all three pull requests have been approved by reviewers,
    they should be landed simultaneously.
 
 ## Emergency Track
 
-Despite our best efforts, every now and then a new language change will
+§ Despite our best efforts, every now and then a new language change will
 unintentionally breaks existing Sass stylesheets. In order to get users unbroken
 as quickly as possible, we have a special track for changes that's highly
 constrained but requires minimal up-front review.
@@ -375,7 +275,7 @@ as follows:
 
 ## Large Language Models
 
-Do not submit any code or prose written or modified by large language models or
+§ Do not submit any code or prose written or modified by large language models or
 "artificial intelligence" such as GitHub Copilot or ChatGPT to this project.
 These tools produce code that looks plausible, which means that not only is it
 likely to contain bugs those bugs are likely to be difficult to notice on
