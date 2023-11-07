@@ -1,4 +1,5 @@
 # JavaScript_WebApplicationProgramming-Interface(jsapi)
+
 [API's for Dummies]("https://en.wikipedia.org/wiki/API")
 
 <img width="110" alt="NASA" src="https://github.com/TheProdigyLeague/StyleSheetSchematics/assets/30985576/9177f209-5d8c-4d6c-bd71-736e96398034">
@@ -123,18 +124,18 @@ _defining syntax refer productions from css specs_
 ### JavaScript API
 
 § Code blocks in Markdown. Variants of [LIT_PROG]("https://en.wikipedia.org/wiki/Literate_programming") Specs prosed to be well-formatted with Headings and Cross-Links. (Still allows type declarations to be statically analyzed and auto-formatted) Spec editors:
-`Node.js
+```Node.js
 
 npm -generate $true .d, .ts
     handle task
-`
+```
 <break>
 
-`bash
+```bash
 
 extensions .d, .ts, .md
 
-`
+```
 
 ![jsAPI](https://github.com/TheProdigyLeague/StyleSheetSchematics/assets/30985576/30ab046c-6a47-4aa0-b512-22573f6ec8cf)
 
