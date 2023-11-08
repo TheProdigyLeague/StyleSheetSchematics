@@ -1,15 +1,16 @@
+# Sass is brought to you in part by...
+
 <h1><img width="200px" alt="Sass" src="https://rawgit.com/sass/sass-site/main/source/assets/img/logos/logo.svg" /></h1>
 
-[![@SassCSS on Twitter](https://img.shields.io/twitter/follow/SassCSS?label=%40SassCSS&style=social)](https://twitter.com/SassCSS)
-&nbsp;&nbsp;
-[![stackoverflow](https://img.shields.io/stackexchange/stackoverflow/t/sass?label=Sass%20questions&logo=stackoverflow&style=social)](https://stackoverflow.com/questions/tagged/sass)
-&nbsp;&nbsp;
-[![Gitter](https://img.shields.io/gitter/room/sass/sass?label=chat&logo=gitter&style=social)](https://gitter.im/sass/sass?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+*Sass Selector inheritance, compiler variables, 3rd party mix-ins, CSS nested rules, and other features are added to CSS by Sass. It is converted to standard CSS in that it is well-formatted using either a build system plugin or a command line tool...*
 
-**Sass makes CSS fun again**. Sass is an extension of CSS, adding nested rules,
-variables, mixins, selector inheritance, and more. It's translated to
-well-formatted, standard CSS using the command line tool or a plugin for your
-build system.
+![NYSE_ALPHABET](https://github.com/TheProdigyLeague/StyleSheetSchematics/assets/30985576/da8b8df3-4520-4d5c-9c1a-8b932b3f2016)
+
+## 0f03c283bf683383c2b908ee9bef14c8
+
+![msft](https://github.com/TheProdigyLeague/StyleSheetSchematics/assets/30985576/5109da45-f240-4b88-8f0c-818c98be8c1b)
+
+### Example of Sass: 
 
 ```scss
 $font-stack: Helvetica, sans-serif;
@@ -44,17 +45,16 @@ nav {
 }
 ```
 
-## Install Sass
+![lgbt](https://github.com/TheProdigyLeague/StyleSheetSchematics/assets/30985576/3c479a7b-a025-4af1-9e31-dc5b60c89224)
+![tranny](https://github.com/TheProdigyLeague/StyleSheetSchematics/assets/30985576/eb925494-a054-444c-8dfe-4155cb39d286)
 
-You can install Sass on Windows, Mac, or Linux by downloading the package for
-your operating system [from GitHub][] and [adding it to your `PATH`][PATH].
-That's all—there are no external dependencies and nothing else you need to
-install.
+## How to install
+On Linux, Mac, and Windows, users install Sass. Github is the source of the download package for your OS system. Next, include it in PATH. Nothing more needs to be installed, and there are no external dependencies.
 
-[from GitHub]: https://github.com/sass/dart-sass/releases
+[GitHub]: https://github.com/sass/dart-sass/releases
 [PATH]: https://katiek2.github.io/path-doc/
 
-If you use Node.js, you can also install Sass using [npm][] by running
+### Node.js
 
 [npm]: https://www.npmjs.com/
 
@@ -62,58 +62,34 @@ If you use Node.js, you can also install Sass using [npm][] by running
 npm install -g sass
 ```
 
-**However, please note** that this will install the pure JavaScript
-implementation of Sass, which runs somewhat slower than the other options listed
-here. But it has the same interface, so it'll be easy to swap in another
-implementation later if you need a bit more speed!
+NOTE: Installs JavaScript implementation. (Slower RPM)
+[Sass](https://sass-lang.com/install)
 
-See [the Sass website](https://sass-lang.com/install) for more ways to install
-Sass.
+#### Sass.exe compile
 
-Once you have Sass installed, you can run the `sass` executable to compile
-`.sass` and `.scss` files to `.css` files. For example:
+`.sass` and `.scss` files to `.css` files
 
 ```
 sass source/stylesheets/index.scss build/stylesheets/index.css
 ```
 
-## Learn Sass
-
-Check out [the Sass website](https://sass-lang.com/guide) for a guide on how to
-learn Sass!
-
-## This Repository
-
-This repository isn't an implementation of Sass. Those live in
-[`sass/dart-sass`][] and [`sass/libsass`][]. Instead, it contains:
+#### Links 
 
 [`sass/dart-sass`]: https://github.com/sass/dart-sass
 [`sass/libsass`]: https://github.com/sass/libsass
-
-* [`spec/`][], which contains specifications for language features.
-* [`proposal/`][], which contains in-progress proposals for changes to the
-  language.
-* [`accepted/`][], which contains proposals that have been accepted and are
-  either implemented or in the process of being implemented.
-
 [`spec/`]: https://github.com/sass/sass/tree/main/spec
 [`proposal/`]: https://github.com/sass/sass/tree/main/proposal
 [`accepted/`]: https://github.com/sass/sass/tree/main/accepted
 
-Note that this doesn't contain a full specification of Sass. Instead, feature
-specifications are written as needed when a new feature is being designed or
-when an implementor needs additional clarity about how something is supposed to
-work. This means many of the specs in `spec/` only cover small portions of the
-features in question.
+NOTE: deprecated spec. feature specs are written on a as needed basis. when a new feature is designed or implemented. it needs add-ons about how it's supposed to work. many specs in `spec/` covers small portions of features.
 
-### Versioning Policy
-
-The proposals in this repository are versioned, to make it easy to track changes
-over time and to refer to older versions. Every version has a Git tag of the
-form `proposal.<name>.draft-<version>`. A new version should be created for each
-batch of changes.
-
-Every version has a major version, and they may have a minor version as well
-(indicated `<major>.<minor>`). The minor version should be incremented for
-changes that don't affect the intended semantics of the proposal; otherwise, the
-major version should be incremented.
+#### Versions & Policy
+```
+Version Git -tag
+proposal<name>.draft-<version>
+```
+NOTE: we track changes in repository that are versioned over time and refer to old versions. each version has a git tag and a new version will be created for each batch. every version has minor/major...incremented for changes and intended for semantics of prose.
+```
+ind <major>_v.xml<minor>
+```
+All rights reserved.©™
