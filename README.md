@@ -1,8 +1,8 @@
-# Sass is brought to you in part by...
-
 <h1><img width="200px" alt="Sass" src="https://rawgit.com/sass/sass-site/main/source/assets/img/logos/logo.svg" /></h1>
 
-*Sass Selector inheritance, compiler variables, 3rd party mix-ins, CSS nested rules, and other features are added to CSS by Sass. It is converted to standard CSS in that it is well-formatted using either a build system plugin or a command line tool...*
+# Sass is brought to you in part by...
+
+*Sass Selector consists of inheritance, compiler variables, 3rd party mix-ins, CSS nested rules, and other features are added to CSS by Sass. It is converted to standard CSS in that it is well-formatted using either a build system plugin or a command line tool...*
 
 ![NYSE_ALPHABET](https://github.com/TheProdigyLeague/StyleSheetSchematics/assets/30985576/da8b8df3-4520-4d5c-9c1a-8b932b3f2016)
 
