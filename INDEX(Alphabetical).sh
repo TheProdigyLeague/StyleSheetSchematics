@@ -1,3 +1,11 @@
+echo "············································································";
+echo ":  __      __   _                    _         _  _             _          :";
+echo ":  \ \    / /__| |__ ___ _ __  ___  | |_ ___  | || |___ _ _ ___| |___  _   :";
+echo ":   \ \/\/ / -_) / _/ _ \ '  \/ -_) |  _/ _ \ | __ / -_) '_/ _ \ / / || |  :";
+echo ":   _\_/\_/\___|_\__\___/_|_|_\___|  \__\___/ |_||_\___|_| \___/_\_\\_,_|  :";
+echo ": —————————————————————————————————————————————————————————————————————————:";
+echo ": — スタイルインデックスへようこそ — :";
+3eecbca2f3eaf70d0975d93e7c79ab5a
 **A**
 
 $angles.txt
@@ -274,7 +282,8 @@ If number is numerator unit: emit unit
 
 $valid CSS construct `calc(1 var(--plus-two))`
 
-Don't evaluate `min()`, `max()`, `round()`, or `abs()` as a calculation if it has keyword or rest arguments.
+$evaluate `min()`, `max()`, `round()`, or `abs()`
+$calc if is keyword or rest arguments.
 
 Handle `"*"` and `"/"` tokens when evaluating `SumExpresssion`s and `ProductExpression`s as calculations. Remove the `CalculationInterpolation` type
 
