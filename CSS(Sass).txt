@@ -162,5 +162,5 @@ is the original denominator.
 
 # `FunctionExpression`
 
-Remove `CssMinMax` and `CalculationExpression` from [the definition of
-`FunctionExpression`].
+Remove `CssMinMax` and `CalculationExpression` from [the definition of `FunctionExpression`].
+
