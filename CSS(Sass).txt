@@ -1,0 +1,166 @@
+CSS Values Unit 3 defined 
+
+§ non-normie 
+
+    That can be used to represent angles, including hue angle that's passed to However, Sass has historically ignored units for arguments passed and related functions, choosing instead to always interpret the hue as degrees. Related functions don't enforce that the saturation and lightness values are percentages. This is a less pressing issue, because it doesn't mean that Sass is misinterpreting *valid* CSS. Because these are breaking changes, they're split across two distinct phases:
+
+1. Function conversion into angle unites > degrees.
+    a. Sass compatibility within CSS spec.
+    b. Dart-Sass makes major version update despite breaking change.
+    c. Deprecations remain the same.
+
+2. Release of next major version Dart-Sass.
+    a. Functions throw errors for unknown units. 
+    b. Interpreter as "deg or %".
+    c. Passing as unitless numbers for hue still supported.
+
+Design Decisions
+    - Scope (Phase 2)
+
+    To further minimize scope of breaking changes in Phase Two. Dart-Sass interpreter hue arguments with other angle arguments will be leaving alone. However, will allow same hue argument to be accepted in multiple functions but interpreted differently will cause confusion. Additionally, The End-User specifically pass units and rely on broken behavior.
+
+    In other words, the cost of not slightly expanding this breaking change is
+likely to be high, and the benefit in terms of causing friction for existing
+users is likely to be very low.
+
+Global Saturation and Lightness Functions
+
+    This proposal chooses instead to leave them as-is because they're intended to be removed in the next breaking release anyway, and until that release saturation and lightness will only have deprecation warnings. This would put them in a situation where they would *only ever* emit deprecation warnings without ever actually rejecting other units, which is unlikely to be worth the effort.
+    No implementation currently follows that behavior, so this spec change effectively serves to make the already-specified behavior more explicit.
+
+    The deprecation process will be divided into three phases: This phase adds no breaking changes. Its purpose is to notify users of the upcoming changes to behavior and give them a chance to move towards passing future-proof units. Implements none of the function changes described with unit. Or Unitless hues should not cause deprecation warnings, but unitless saturations and lightnesses should. Phase 2 otherwise leaves existing behavior intact. Phase 2 implements a subset of the function changes described...
+
+    Phase 3 implements the full function changes described as it's recommended that implementations increment their major version numbers with the release of phase 3. The JS API representation of a Sass argument list.
+
+Interpolation in At-Rule Names: Draft 1
+
+    This proposal defines support for interpolation in at-rule names. Any at-rule may include interpolation in its name. This interpolation automatically causes it to be parsed as an unknown at-rule, even if the resolved name of the rule is known to Sass. The only exception is the `@keyframes` rule, which will still allows sub-rules with keyframes selectors such as `10%`.
+
+    It would be possible to treat CSS at-rules that Sass knows about, like `@media`, specially even when they're generated from interpolated at-rule names. However, this would add a lot of implementation complexity, since implementations would need to be able to re-parse those at-rules' values at runtime. It's also unclear that there's any value to be gained in return for this
+complexity. At-rule interpolation is primarily useful for adding vendor prefixes, and the two CSS at-rules that Sass has special support for (`@media` and `@supports`) don't use vendor prefixes.
+
+This proposal defines a replacement for the production `UnknownAtRule`. The
+grammar for this production is: No whitespace is allowed after `@`. As with all statements, an `UnknownAtRule`
+without a block must be separated from other statements with a semicolon.
+
+Note: that this is the same as the previous syntax, except that the at-rule's name can be interpolated.
+
+When an at-rule is evaluated, its name is evaluated to produce an unquoted
+string which is used as the name of the generated at-rule. Then that generated
+name is checked to see if it's an at-rule that has special runtime handling. treated as an unknown at-rule rather than a media rule.
+
+    Only omit style rules if *all* of their complex selectors are bogus. Expand the set of selectors that are treated by the extend algorithm as matching nothing to include bogus pseudo selectors, since these can never be transformed into anything useful. Don't throw an error for style rules that contain no children, since this would break nesting. Support single leading combinators. Support complex selectors composed of only a single combinator. Allow leading combinators. Replace our custom `Combinator` production with the CSS spec's in Initial draft. This proposal increases the strictness with which Sass parses and resolves non-standard ("bogus") uses of selector combinators. Currently, Sass is very liberal when it comes to where explicit selector combinators can be written—much more so than CSS itself. The latter two are useful when nesting style rules, but the former has no known use at all. Historically, we've said that we support these because they enable some browser hacks, but this seems to be purely hypothetical: Most comprehensive source of hacks I've found, and it doesn't list any hacks that are enabled by this support, even among its "legacy hacks". In addition, supporting these selectors imposes substantial complexity on Sass
+implementations. They byg and make the data model more complex than it needs to be. This in turn makes bugs like that don't involve non-standard combinators more difficult to resolve. We'll move towards forbidding these combinators in two phases. In the first phase, we'll issue deprecation messages for all forbidden cases, but only change behavior in cases where Sass was already producing invalid CSS anyway. In particular: Once nesting and extensions have been resolved, if any of a style rule's
+selectors contains a leading, trailing, or multiple combinator after nesting and extensions are resolved, omit that style rule from the generated CSS and emit a deprecation warning. If a selector with a leading or trailing combinator is used with any extend-related infrastructure, emit a deprecation warning but *don't* change the behavior unless the resolved selector still has a bogus combinator, as above. If a selector with a doubled combinator is used with any extend-related infrastructure, emit a deprecation warning and treat that selector as though it matches no elements. This will be sufficient to substantially simplify the implementation without affecting the in-browser behavior of any stylesheets.
+
+    In the second phase, which for existing implementations will accompany a major version release, we will emit errors everywhere Phase 1 produced deprecation warnings. In particular: If a style rule's selectors contain leading, trailing, or multiple combinators after nesting is resolved, emit an error. Most existing definitions being modified here haven't been defined explicitly before this document. The old definitions are listed in strikethrough mode to clarify the change. A *visible combinator* is any selector combinator other than the descendant combinator.
+    
+Executing an Extend Rule
+
+    A [complex selector] is *bogus* if it has a leading or [trailing combinator], or if any of the simple selectors it transitively contains is a selector pseudo with a bogus selector, except that `:has()` may contain complex selectors with leading combinators. A selector list is *bogus* if any of its complex selectors are bogus. 
+
+Note: that the existing productions being modified have not been defined explicitly before this document. The old productions are 
+
+    Listed in strikethrough mode to clarify the change. This proposal modifies the existing `ComplexSelector` and `ComplexSelectorComponent` productions to drop support for multiple combinators: This proposal adds the following to [Evaluating a Style Rule], after executing each child of `rule`: This proposal adds the following to [Executing an Extend Rule], after checking for a current style rule: If the current style rule is [bogus], throw an error. For the `selector.extend()`, `selector.is-superselector()`, `selector.replace()`, and `selector.unify()` functions, after parsing their selector arguments, throw an error if any of the parsed selectors are [bogus]. `selector.append()`, `selector.nest()`, and `selector.parse()` are still allowed to take bogus selectors because these functions are syntactic rather than semantic. This means on one hand that there aren't ambiguities about how to handle bogus selector inputs, and on the other that it may be useful to emit bogus selectors for later use in nesting contexts. Note that `selector.append()` already forbids selectors with leading or trailing combinators from being passed in between selectors.
+    
+    Multiple combinators between compound selectors. Combinators at the beginning of selectors. Combinators at the end of selectors. If a selector with a leading, trailing, or multiple combinator is used.
+        
+A *complex selector component* is a compound selector as well as a sequence of zero or more. A *complex selector component* is a compound selector as well as a single. Trailing Combinator. A *trailing combinator* is its final combinator if it's not a. If it *is* a descendant combinator, the complex selector doesn't have a trailing combinator.
+
+Bogus Selector
+    
+    The deprecation will be divided into two phases: This phase will only change behavior that doesn't affect in-browser rendering.
+    In particular: It is unchanged. A complex selector is instead considered bogus if it would be bogus in Phase 2 *or* if it can be parsed in Phase 1 but not in Phase 2. The newly-added errors produce deprecation warnings instead. In remove any complex selectors from `css`'s selectors that are bogus, except those that have a single leading combinator but are otherwise not bogus. Leading combinators are allowed in Phase 1 (but still emit deprecation warnings) because they may be used for nesting along. Define a "useless" selector as: A complex selector that has multiple combinators. A bogus pseudo selector. Any selector that contains a useless selector. Treat useless selectors as selectors that can match no elements. Phase 2 This phase will emit errors as described in the body of the proposal. Built-In Modules Sass provides a number of built-in that may be loaded from URLs with the scheme `sass`. These modules have no extensions, CSS trees, dependencies, or source files. Their canonical URLs are the same as the URLs used to load them. Built-In Functions and Mixins Each function and mixin defined in a built-in modules is specified with a signature of the form.
+    With an empty scope with no parent as scope. Run the procedure, and return its result if this is a function. Built-in mixins don't accept content blocks unless explicitly specified otherwise.
+    
+    Allow rules within style rules and at-rules. Recent CSS specs allow this, so we shouldn't forbid it. Disallow silent comments. Explicitly defined the term "canonical URL" as it relates to stylesheets. Added a specification for loading plain CSS as an entrypoint file. Added a non-normative note explaining that the new import algorithm maintains the semantics of the existing import algorithm, other than supporting plain CSS files. Initial draft. Throw an error when serializing a degenerate number with complex units in a calculation. Clarify that we're checking for degenerate *values* in "Converting a Number to a Calculation". To represent unknown calculation constants. Don't parenthesize the right-hand side of `"+"` or `"-"` when the right-hand side is a degenerate number with one or more units. Degenerate numbers are serialized to multiplication and division expressions, which always have higher precedence than addition and subtraction. This proposal adds support for constant names in CSS calculations. Since Sass now fully parses calculations and resolves them where necessary, it's necessary to keep up with new syntactic features added in plain CSS. CSS Values 4 adds support for several, written as identifiers in the calculation, which Sass should support as well.
+    
+    Calculations may now contain arbitrary identifiers in any value position. In addition, this creates for the first time a clear and standard CSS way of representing degenerate numeric constants like `NaN` and the infinities. This allows us to serialize a Sass number with value, respectively. Arbitrary Identifiers We're choosing to support arbitrary identifiers in calculations, rather than just those specified in CSS Values 4, for forwards-compatibility. While it's unclear whether the production itself will be expanded, it's likely that calculations will begin supporting additional non-constant values depending on context (such as in relative color functions.) Serializing Complex Units. The addition of the procedure gives a possibility, in principle, for representing numbers with complex units in a standard CSS format rather than throwing an "invalid CSS value" error. However, no browser yet supports complex unit calculations, so this would likely just silence real errors without providing any actual value. Whether and how we want to support this once browsers *can* parse it is a question for another time. Degenerate Number...
+    
+        If number has more than one numerator unit, or more than zero denominator units, throw an error. Add another possible condition for parenthesizing right value: the operator is `"/"` and right value is a degenerate number with one or more units. Serialize number as normal. To serialize a number to CSS: If the number has more than one numerator unit, or more than zero denominator units, throw an error. If the number is degenerate, [convert it to a calculation] then serialize that to CSS.
+        
+        Given a number `number`, this procedure returns a CSS-compatible calculation that represents the same numeric value. If `number`'s value is `Infinity`, let `value` be an `UnquotedString` whose `value` is `'infinity'`. Otherwise, if `number`'s value is `-Infinity`, let `value` be an `UnquotedString` whose `value` is `'-infinity'`. Otherwise, if `number`'s value is `NaN`, let `value` be an `UnquotedString` whose `value` is `'NaN'`. Otherwise, let `value` be a `CalculationValue` whose value is `number` without units. For each unit `unit` in `number`'s numerator units: Set `value` to a `CalculationOperation` with `operator` set to `'*'`, `left` set to `value`, and `right` set to a number with value 1 and unit `unit`. For each unit `unit` in `number`'s denominator units: Set `value` to a `CalculationOperation` with `operator` set to `'/'`, `left` set to `value`, and `right` set to a number with value 1 and unit `unit`. Return a `Calculation` with `name` set to `'calc'` and arguments set to `[value]`. Currently the logic for serializing multiple numerator or denominator units is unused, but it's likely to be useful later when determining whether/how to serialize numbers with complex units. Support space-separated lists in calculation expressions without deprecation, since they're necessary to support. Always preserve parentheses around unquoted strings.
+        
+        Update the definition of potentially slash-separated numbers to reflect the fact that calculations are no longer determinable syntactically. Add a section describing how to restructure slash-separated lists as division within calculations. During the deprecation period, only consider unbracketed `SpaceListExpressions` with multiple elements that actually contain interpolation to be calculation-safe. And deprecate the associated JS API and embedded protocol field. The problem this type existed to work around is no longer an issue in the new parsing structure. Preserve parentheses around that get injected from anywhere, as well as any unquoted strings that appear and might need parentheses...Refactor the way calculations are parsed to allow them to coexist with user-defined Sass functions of the same names. No longer forbid user-defined functions with the same names as CSS math functions and remove the associated deprecation process. Drop support for interpolation in calculations outside of identifier position and add a deprecation process for this. Allow custom functions named like vendor-prefixed new CSS functions. Explicitly forbid user-defined functions with the same names as CSS math functions. Add a deprecation process for gradually phasing out user-defined functions with name conflicts. Don't exempt percentages from most functions' simplification logic, since those functions don't allow *any* units in CSS, including percents. Update the definition of potentially slash-separated numbers to exclude calc functions that were previously evaluated as Sass global functions. Fix behavior of `round` to ensure it is backwards-compatible with the existing global Sass function. Since then, between Firefox and Safari browser support has landed for the rest of the expressions listed in [Values and Units 4].
+        
+        This also expands calculation parsing to allow constructs like `calc(1
+var(--plus-two))` (where for example `--plus-two: + 2`) which are valid CSS but
+weren't supported by the old first-class calculation parsing.
+
+    This proposal substantially changes the way calculations are parsed, merging the
+syntax with the standard Sass expression syntax. Now the only difference between
+a calculation and a normal Sass function is how it's *evaluated*. This has the
+notable benefit of allowing calculations to coexist with user-defined Sass
+functions of the same name, preserving backwards-compatibility.
+
+    Because this overlap is always going to be somewhat confusing for readers, we
+considered simply disallowing Sass functions whose names matched CSS
+calculations after a suitable deprecation period. However, in addition to the
+intrinsic value of avoiding breaking changes, the function name `rem()` in
+particular is widely used in Sass libraries as a means of converting pixel
+widths to relative ems, so this is a fairly substantial breaking change in
+practice.
+
+    This proposal changes the behavior of the `%` operation when the right-hand side
+is infinite *and* has a different sign than the left-hand side. Sass used to
+return the right-hand side in accordance with the floating point specification,
+but it now returns NaN to match CSS's `mod()` function.
+
+    Although this is technically a breaking change, we think it's highly unlikely
+that it will break anyone in practice, so we're not going to do a deprecation
+process for it.
+
+> Because calculations have special syntax in CSS, only a subset of SassScript
+> expressions are valid (and these are interpreted differently than elsewhere).
+
+Two [doubles] are said to be *exactly equal* if they are equal according to the
+`compareQuietEqual` predicate as defined by [IEEE 754 2019], §5.11.
+
+# Known Units
+
+A number has *known units* unless it has unit `%`.
+
+> This is relevant for calculations, because in plain CSS they resolve
+> percentages before doing their operations. This means that any non-linear
+> operations involving percentages must be passed through to plain CSS rather
+> than handled by Sass.
+>
+> More complex units involving percentages are allowed because any non-linear
+> function will throw for complex units anyway.
+
+# Potentially Slash-Separated Number
+
+Replace [the definition of `Potentially Slash-Separated Number`] with the
+following:
+
+A Sass number may be *potentially slash-separated*. If it is, it is associated
+with two additional Sass numbers, the *original numerator* and the *original
+denominator*. A number that is not potentially slash-separated is known as
+*slash-free*.
+
+A potentially slash-separated number is created when a `ProductExpression` with
+a `/` operator is evaluated and each operand is *syntactically* one of the
+following:
+If the result of evaluating the `ProductExpression` is a number, that number is
+potentially slash-separated if all of the following are true:
+
+* the results of evaluating both operands were numbers, and
+* if either operand was a `FunctionCall`, it was [evaluated as a calculation]
+  and its name was not `"abs"`, `"max"`, `"min"`, or `"round"`.
+
+[evaluated as a calculation]: #evaluating-a-functioncall-as-a-calculation
+
+If both of these are true, the first operand is the original numerator of the
+potentially slash-separated number returned by the `/` operator, and the second
+is the original denominator.
+
+# Syntax
+
+> Calculations are no longer parsed differently than other Sass productions.
+> Instead, they're *evaluated* differently at runtime. This allows them to
+> coexist with user-defined Sass functions even when their names overlap.
+
+# `FunctionExpression`
+
+Remove `CssMinMax` and `CalculationExpression` from [the definition of
+`FunctionExpression`].
