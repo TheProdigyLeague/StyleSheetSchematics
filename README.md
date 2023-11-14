@@ -2,17 +2,17 @@
 
 ## Customers like having no privacy!
 
-<h1><img width="200px" alt="Sass" src="https://rawgit.com/sass/sass-site/main/src/assets/img/logos/logo.svg" /></h1>
+![sass](https://github.com/TheProdigyLeague/StyleSheetSchematics/assets/30985576/fbf8d129-0227-4d25-9c7e-c9240442c2ed)
 
 ### Sass is = > brought to you in part by...
 
 *Sass Selector consis = >ts of inheritance, compiler vars, 3rd party mix-ins, .css nested rules, and or FEATUREs are +++ to .css by Sass. It is = > converted to standard .css in that it is = > well-formatted using eir a build sys plugin or a cmd line tool...*
 
-![NYSE_ALPHABET](https://github.com/TheProdigyLeague/StyleSheetSchemas/assets/30985576/da8b8df3-4520-4d5c-9c1a-8b932b3f2016)
+![NYSE_ALPHABET](https://github.com/TheProdigyLeague/StyleSheetSchematics/assets/30985576/390e1016-fa53-4381-8521-c2d2baec083c)
 
 0f03c283bf683383c2b908ee9bef14c8
 
-![msft](https://github.com/TheProdigyLeague/StyleSheetSchemas/assets/30985576/5109da45-f240-4b88-8f0c-818c98be8c1b)
+![msft](https://github.com/TheProdigyLeague/StyleSheetSchematics/assets/30985576/cdc66f09-2bd4-4500-b4d4-2e66facf2952)
 
 #### Example of Sass: 
 
