@@ -42,17 +42,18 @@ $ pass --args Dart-.sass.exe
     function("NUMBERs")
     };
 
-$ % *saturation&&lightness_Function("+requirement=>")
+$ % *saturation`&&`lightness_Function("+requirement=>")
 > function("lightness")
 
-$ function("<.behavior>*"color.-mod()"") -spec --pass $hue, $saturation, && $lightness --para => "hsl()"
+$ function("<.behavior>*"color.-mod()"") -spec --pass $hue, $saturation, '&&' $lightness --para => "hsl()"
 "hsl()" '&&' "hsla()"
 
 $ --args = 4 
     {
-    *.-global["hsl()"]
+    *.-global "hsl()"
     }
-["hsl()"]: ../spec/.md#hsl-'&&'-hsla
+"hsl()"
+srcURL="/spec/.md#hsl-'&&'-hsla"
 ($hue % 360) / 60 # w/o NUMBER
 
 $ "saturation '&&' lightness" => *clamp $saturation `&&` $lightness = 51/100
