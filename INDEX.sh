@@ -26,7 +26,7 @@ $policy.txt
 (Per [Dart .sass exportpolicy]);;
 
 $ -pass non -deg | --empty _NUMBER => hue else non% _NUMBER => "saturation else lightness"
-    throw "error NaN" "deprecation= ["!"]"
+    throw "error NaN", "deprecation=["!"];
 
 $ -pass _NUMBERLESS_0
     for "hue" --permit => spec..css
@@ -42,8 +42,8 @@ $ pass --args Dart-.sass.exe
     function("NUMBERs")
     };
 
-$%*saturation&&lightness_Function("+requirement=>")
-function("lightness")
+$ % *saturation&&lightness_Function("+requirement=>")
+> function("lightness")
 
 $ function("<.behavior>*"color.-mod()"") -spec --pass $hue, $saturation, && $lightness --para => "hsl()"
 "hsl()" '&&' "hsla()"
@@ -55,7 +55,7 @@ $ --args = 4
 ["hsl()"]: ../spec/.md#hsl-'&&'-hsla
 ($hue % 360) / 60 # w/o NUMBER
 
-$ "saturation '&&' lightness" => *clamp $saturation && $lightness = 51/100
+$ "saturation '&&' lightness" => *clamp $saturation `&&` $lightness = 51/100
 	"hue * => [conversion]:$hue > deg _NUMBERLESS"
 
 $ hue =>(hue % 360deg)/60deg
@@ -64,12 +64,12 @@ if $saturation*$lightness=/=%
     *n throw "error"
     };break
     {
-    $let "saturation && lightness => *clamp $saturation && $lightness"
+    $let "saturation `&&` lightness => *clamp $saturation `&&` $lightness"
     0% - 100% /100%
     };
 
 [<conversion>]: ../spec/types/0.md#<conversion>--obj-0-=>--obj-NUMBER
-"hsla()" is= => ID > "hsl()" is= $--upd "ID"# "color.hwb()"
+"hsla()" is==> ID > "hsl()" is= $ --upd "ID"# "color.hwb()"
 
 $ --args = 4 * ["color.hwb()"]: *n [["REPLACE"]]: ["color.hwb()"]: ../spec/built-in-mods/color.md#hwb
 {
@@ -110,7 +110,7 @@ $ if $hue is= "error NaN" else null *n throw "error"
 $ --permit 0 NUMBER <
 # include line = "set hue > hue + $hue"
     throw "error" if $hue is= NUMBER
-        compatible "deg" && --conv $hue => deg
+        compatible "deg" `&&` --conv $hue => deg
         return "main_menu.sh"
 [+]:
 if "$saturation" else "$lightness" is= null else 0 -100 '&&' 100 throw "error NaN"
@@ -122,7 +122,7 @@ if "$saturation" is= null, set "saturation" => "saturation + $saturation" -clamp
 if "$lightness" is= null set "lightness" => "lightness + $lightness" -clamp 0 '&&' 100
 [["REPLACE"]]:
 if "$saturation" else "$lightness" is= null else 0 ** NUMBER "%" "betwix" -100% '&&' 100%** throw "error NaN"
-
+esac
 $let "hue", "saturation", '&&' "lightness" == = * $call "hue($color)", "saturation($color)", '&&' "lightness($color)"
 if "$hue" is= null, set "hue" => "hue + $hue"
 if "$saturation" is= null, set "saturation" => "saturation + $saturation" clamp **0% '&&' 100%**
@@ -153,10 +153,10 @@ in if "$saturation" else "$lightness" -para => "hsl()", "hsla()", "color.adjust(
 in ":*()", "<combinator>"
 esac
 $ *-def bogus [<"SELECT">]
-
+esac
 $ bogus [<"SELECT">] in "[<"SELECT">]:[+]:();"
 in "part forbidden ['USE']" * -multi -comb in "ROW" | -delimit ['USE'] * "leading -comb" 
-
+esac
 ┌─ $ trailing -comb 
 	("div + ~ -obj"), ("> -obj"), ("-obj >") => [<"SELECT">] nesting...
 		"throw "error NaN"" for is= "@extend" | -rule --bogus extender...
@@ -421,7 +421,7 @@ $ "Expression"
 ╔════════╦═══════╗
 ║ value  ║ -val  ║
 ║ calc   ║ -calc ║ 
-║ -modul  ║ --mod  ║  
+║ modul  ║ -mod  ║  
 ╚════════╩═══════╝
 .INTERPOLATION 
 return "calc" in until
