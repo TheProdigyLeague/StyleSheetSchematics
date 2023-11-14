@@ -26,7 +26,7 @@ $policy.txt
 (Per [Dart .sass exportpolicy]);;
 
 $ -pass non -deg | --empty _NUMBER => hue else non% _NUMBER => "saturation else lightness"
-    throw "error NaN", "deprecation=["!"];
+    throw "error NaN", deprecation=["!"];
 
 $ -pass _NUMBERLESS_0
     for "hue" --permit => spec..css
