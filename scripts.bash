@@ -1,6 +1,7 @@
-# Types
-# The value type known as a "calculation" has the following structure:
-```
+!usr/bin/scripts
+$ type -script "calcs"
+    {"struct"};
+```bash
 int Calc { name: string; arguments: CalculationValue[]; }
 
 type CalculationValue =
@@ -15,25 +16,28 @@ interface CalculationOperation
   left: CalculationValue;
   right: CalculationValue;
 }
-
 ```
-# This ensures that valid CSS constructs like `calc(1 var(--plus-two))` and
-# similar Sass constructs like `calc(1 #{"+ 2"})` work while preventing clear
-# errors like `calc(1 2)`.
+esac
 
-# This does allow errors like `calc(a b)`, but the complexity of verifying
-# that the unquoted strings could actually be a partial operation isn't worth
-# the benefit of eagerly producing an error in this edge case.
-# It's valid to write `pow(var(--two-args))` or `pow(#{"2, 3"})`, but
-# otherwise calculations' arguments must match the expected number.
-# If the same file were to be imported multiple times, Sass would create a new
-# function value for each `@function` rule each time the file is imported.
+$ this valid='.css' 
+    {"struct"};
+        $calc( 1 -var(+2)): .scss='struct'
+        $calc( 1 #{"+ 2"}): prevent ERR calc(1 2)
+        $calc( a b ): complex=verify # unquoted string partial operation not worth producing this edge case
+esac
+
+write `pow(var(2 -args ))` or $pow( -tag {"2, 3"} );
+    $ calcs -args match=`number` #expected
+esac
+
+if -fs $import * -time then `.scss` $create `NEW` function('value') for `@function` -all -time -fs $import
+
 # Because a new function value has been created, although the name, body, and
-# source span of a given function from the file would be the same between
-# imports, the values would not be equal because they refer to different
-# instances. Functions pre-defined by the Sass language are instatiated at most
-# once during the entire evaluation of a program.
-
+# source span of a given function from the file would be the same between imports
+{
+    -value =/= -refer -diff in `stance`
+}; esac
+# Functions pre-defined by the Sass language are instatiated at most once during the entire evaluation of a program.
 # As an example, if we declare two functions:
 ```
 > @function foo() {
@@ -48,8 +52,7 @@ interface CalculationOperation
 >
 > $b: meta.get-function(foo);
 ```
-# Although every aspect of the two functions is the same, `$a != $b`, because
-# they refer to separate function values.
+# Although every aspect of the two functions is the same, `$a != $b`, because they refer to separate function values.
 ```
 > @mixin foo {
 >   color: red;
@@ -63,41 +66,41 @@ interface CalculationOperation
 >
 > $b: meta.get-mixin(foo);
 ```
-# Although every aspect of the two mixins is the same, `$a != $b`, because they refer to separate mixin values.
-# These are intended to be kept in sync with the units in [CSS Values and Units]
-# that are fixed in relation to each other. Each conversion factor is the equivalent of `1${unit}` in a canonical unit.
+# Each conversion factor is the equivalent of `1${unit}` in a canonical unit.
 
-# It can be used within an identifier, as in `a#{b}c`, and is considered part of
-# that identifier. The contents of the interpolation is evaluated at runtime and
-# concatenated with the rest of the identifier to produce an unquoted string.
+# Note: in an $id `a#{b}c`
+# content of interpolation is evaluated
+`runtime.dll` '&&' $ cat "rest * id" -prod "{}"
+esac
 
-# `#{b}` used on its own as a single expression conversion content of interpolation to unquoted string
+-{b} # unquoted string-single expression conversion content of interpolation parsed as alpha char 
+# hyphen id
+`$var -#{b}` # parsed as space-separated.lst container
+`$var` and `-#{b}` -op `$var - #{b}` # numbers are not id
+`0#{$b}` '&&' `0` '&&' `#{$b}`
+esac
 
-# Because it's parsed as an *alphabetic* character, when it comes after a hyphen
-# that hyphen is considered part of the identifier. This means that `$var -#{b}`
-# is parsed as a space-separated list containing `$var` and `-#{b}` rather than as the operation `$var - #{b}`.
+if -input start `-#{}` # consume a single code point and add `"-"` to `components`.
+if -input start #{} consume an interpolation and add expression to `components`.
+'[consume identifier]'#(consuming-an-identifier)
++ -string `component`
 
-# Because numbers are not an identifier start characters and the interpolation
-# is parsed as an alphabetic character, `0#{$b}` is parsed as a space-separated list containing `0` and `#{$b}`
-# If the input starts with `-#{`, consume a single code point and add `"-"` to `components`.
+while -input start #{}
 
-# If the input starts with `#{`, consume an interpolation and add its expression to `components`.
+'[identifier code point]'::'[]'::C:\_token
 
-# Otherwise, [consume an identifier](#consuming-an-identifier) and add its string to `components`.
+'[consume name]'#(consuming name)
++ -string `component`
+$return `component`
+esac
 
-# While the input starts with `#{`, a [identifier code point][], or `\`:
-
-# If the input starts with `#{`, consume an interpolation and add its expression to `components`.
-
-# Otherwise, [consume a name](#consuming-a-name) and add its string to `components`.
-
-# Return `components`...
-
-# Creates a Sass argument list:
-
-# Set `internal` to a Sass argument list with contents set to `contents`, keywords set to `keywords`, and list separator set to # `separator`.
-
-# Return `this`.
+$ create ".scss --args .lst"
+<args.scss><args.lst>
+set -internal `.scss` --args `lst` -content 
+<`internal`>
+set `content, key` set -key '&&' `.lst` #seperator
+set `seperator`
+$return_this then esac
 ```
 constructor(
   contents: Value[] | List<Value>,
@@ -117,16 +120,23 @@ $ get keywords(): OrderedMap<string, Value>;
 &#32;                   ('{' Statements '}')?
 </pre></x>
 ```
-# The JS API representation of a Sass boolean.
+~
+~
+<api>demo.js<api>;
+<`boolean.scss`>
+
 
 $ get value(): boolean;
 {void} # SassBoolean
+
+
 # `Value`
 declare module '../spec/js-api/value' {
   interface Value {
 assertCalculation(name?: string): SassCalculation;
   }
 } 
+
 # `Options`
 declare module '../spec/js-api/options' {
   interface Options<sync extends 'sync' | 'async'> {
@@ -140,28 +150,35 @@ static min(
   arguments: CalculationValue[] | List<CalculationValue>
 ): SassCalculation;
 ~
+esac
 static max(
   arguments: CalculationValue[] | List<CalculationValue>
 ): SassCalculation;
+
 # `clamp`
 static clamp(
   min: CalculationValue,
   value?: CalculationValue,
   max?: CalculationValue
 ): SassCalculation;
+esac
+
 # `name`
 Returns [`internal`]'s `name` field.
 [`internal`]: #internal
 get name(): string;
 Returns a list of [`internal`]'s arguments.
+
 get arguments(): List<CalculationValue>;
 {void}
+
 #`CalculationOperator`
 [`CalculationOperation`]: ../spec/types/calculation.md#types
+
 # `internal`
 [`Value.internal`]: ../spec/js-api/value/index.d.ts.md
-# Constructor
 
+# Constructor
 constructor(
   operator: CalculationOperator,
   left: CalculationValue,
@@ -191,8 +208,8 @@ hashCode(): number;
  
 constructor(value: string);
 
-# Returns [`internal`][ci-internal]'s `value` field.
 
+# Returns [`internal`][ci-internal]'s `value` field.
 [ci-internal]: #internal-2
 
 get value(): string;
@@ -202,8 +219,8 @@ equals(other: unknown): boolean;
 hashCode(): number;
 {void}
 
-# Returns [`internal`]'s `name` field.
 
+# Returns [`internal`]'s `name` field.
 static calc(argument: CalculationValue): SassCalculation;
 
 static min(
@@ -224,11 +241,10 @@ get name(): string;
 
 
 # Returns a list of [`internal`]'s arguments.
-
 get arguments(): List<CalculationValue>;{void};;# SassCalculation
 
-# `CalculationOperator`is the set of possible operators in a Sass calculation.
 
+# `CalculationOperator`is the set of possible operators in a Sass calculation.
 constructor(
   operator: CalculationOperator,
   left: CalculationValue,
@@ -236,11 +252,8 @@ constructor(
 );
 
 get operator(): CalculationOperator;
-
 get left(): CalculationValue;
-
 get right(): CalculationValue;
-
 equals(other: unknown): boolean;
 
 break;
@@ -252,7 +265,6 @@ _constructor(value: string);
 get value(): string;
 
 # Returns the name of [`internal`]'s space.
-
 [`internal`]: ../spec/js-api/value/color.d.ts.md#internal
 
 get space(): KnownColorSpace;
@@ -304,7 +316,7 @@ isChannelPowerless(
   channel: ChannelNameXyz,
   options?: {space: ColorSpaceXyz}
 ): boolean;
-
+esac
 let `changedColor` is result of:
 
 interpolate(color2: SassColor, options: {weight?: number}): SassColor;
@@ -326,7 +338,6 @@ interpolate(
     })
 
 # If `space` equals `hsl` and `spaceSetExplicitly` is `true`, let `changedColor` be the result of:
-
   new SassColor({
     hue: changedValue('hue'),
     saturation: changedValue('saturation'),
@@ -336,7 +347,6 @@ interpolate(
   })
 
 # If `space` equals `lab` or `oklab`, let `changedColor` be the result of:
-
   new SassColor({
     red: changedValue('red'),
     green: changedValue('green'),
@@ -378,7 +388,6 @@ interpolate(
   })
 
 # If `space` equals `lch` or `oklch`, let `changedColor` be the result of:
-
   new SassColor({
     lightness: changedValue('lightness'),
     chroma: changedValue('chroma'),
@@ -387,9 +396,7 @@ interpolate(
     space: space
   })
 
-# If `space` equals `a98-rgb`, `display-p3`, `prophoto-rgb`, `rec2020`, `srgb`, or `srgb-linear`, 
-# let `changedColor` be the result of:
-
+# If `space` equals `a98-rgb`, `display-p3`, `prophoto-rgb`, `rec2020`, `srgb`, or `srgb-linear`, let `changedColor` be the result of:
   new SassColor({
     red: changedValue('red'),
     green: changedValue('green'),
@@ -397,9 +404,9 @@ interpolate(
     alpha: changedValue('alpha'),
     space: space
   })
+esac
 
-# If `space` equals `xyz`, `xyz-d50`, or `xyz-d65`, let `changedColor` be the result of:
-  
+# If `space` equals `xyz`, `xyz-d50`, or `xyz-d65`, let `changedColor` be the result of:  
   new SassColor({
     y: changedValue('y'),
     x: changedValue('x'),
@@ -520,7 +527,6 @@ constructor(options: {
 });
 
 #proto
-
 message Color {
   string space = 1;
   double channel1 = 2;
@@ -532,26 +538,22 @@ message Color {
 }
 
 # Deprecations
-
 do make for [`legacy_color_space`] | [`channel`] function("deprecation") 
 $call`color-4-api`
 
 # The following deprecated getters return the result of
-
 [`this.channel(channelName, { space: "rgb" })`][`channel`] where `channelName` is name of $--git
 * `red`
 * `green`
 * `blue`
 
 # The following deprecated getters return the result of
-
 [`this.channel(channelName, { space: "hsl" })`][`channel`] where `channelName` is name of $--git
 * `hue`
 * `saturation`
 * `lightness`
 
 # The following deprecated getters return the result of
-
 [`this.channel(channelName, { space: "hwb" })`][`channel`] where `channelName` is name of $--git
 * `whiteness`
 * `blackness`
@@ -578,7 +580,9 @@ constructor(options: {
   whiteness: number;
   blackness: number;
   alpha?: number;
-});
+});~
+esac
+    
 
 # `red`
 
@@ -663,9 +667,10 @@ if `options.hue`, `options.saturation`, or make `options.lightness`
 
 });br;
 
-# This proposal adds the ability for mixins to pass arguments to their `@content`
-# blocks. These arguments are passed using the normal argument syntax, and
-# accepted using a new `using` syntax for `@include`:
++ $this -prose -able for `mixin` -pass -args for `@content` --blocks
+{
+    -pass -args "syntax accept" for `@include` then esac
+}
 
 
 @mixin accepts-content {
@@ -679,17 +684,11 @@ if `options.hue`, `options.saturation`, or make `options.lightness`
     background-color: hsl($hue, 75%, 90%);
   }
 }
+esac 
 
-# The argument list for `using` supports all the features of a normal argument list declaration.
-
-# Design Decisions
-
-# While the syntax for passing arguments to `@content` was pretty obvious, a
-# number of different syntaxes were considered for declaring which arguments are
-# accepted by an `@include`, including:
-
-# Adding a new at-rule:
-
+-args `.lst` for '[user support all features]' * -args `.lst` "declare"
+        while "syntax" for -pass -args `@content`
+            -diff "syntax" for "declare" -args "accept" * `@include` + `@@` -rule
 @include accepts-content {
   @receive ($number, $hue);
         ...
@@ -706,19 +705,15 @@ if `options.hue`, `options.saturation`, or make `options.lightness`
 @include accepts-content -> ($number, $hue) {
         ...
 }
-
-# We decided on `using` over `@receive` because it reads clearer to have the
-# arguments be part of the `@include` syntax rather than in the mixin body. We
-# chose it over Ruby- or Haskell-style because we generally prefer the use of
-# words over punctuation in Sass.
-
-# We decided to use `using` as opposed to another word because it's relatively
-# terse while still being clear. We considered `as` instead, but decided the
-# meaning of the word didn't match the semantics; and we considered `with`, but
-# decided that it was both semantically ambiguous and confusing because the
-# [module system proposal][] uses to declare an argument *invocation* rather than
-# an argument *declaration*.
-
+```scss
+using clear args
+@include syntax
+```
+# [module system proposal][] uses to declare an argument *invocation* rather than an argument *declaration*.
+```scss
+using clear
+declare args invoke
+```
 $[module_system_proposal]: ```\module-system.md```
 
 # This Syntax proposal updates the syntax for `@content` and `@include` as follows:
@@ -808,121 +803,72 @@ warn?(
         break;
   }
 };
+esac
+
 # `Deprecations`
 
 interface Deprecations {'void'}
 
-# `call-string`
-
-# Deprecation for passing a string to `call` instead of `get-function`.
-
 'call-string': Deprecation<'call-string'>;
 
 # `elseif`
-
-# Deprecation for `@elseif`.
-
 $elseif: Deprecation<'elseif'>;
 
 # `moz-document`
-
-# Deprecation for parsing `@-moz-document`.
-
-
 'moz-document': Deprecation<'moz-document'>;
 
-
 # `relative-canonical`
-
-# Deprecation for importers using relative canonical URLs.
-
-
 'relative-canonical': Deprecation<'relative-canonical'>;
 
-
 # `new-global`
-
-# Deprecation for declaring new variables with `!global`.
-
-
 'new-global': Deprecation<'new-global'>;
 
-
 # `color-module-compat`
-
-# Deprecation for certain functions in the color module matching the
 # behavior of their global counterparts for compatibility reasons.
-
 'color-module-compat': Deprecation<'color-module-compat'>;
 
 # `slash-div`
-
-# Deprecation for treating `/` as division.
-
-# Update the proposal for forward slash as a separator to say that it emits
-# deprecation warnings with ID 'slash-div'.
-
+# Update the proposal for forward slash as a separator to say that it emits deprecation warnings with ID 'slash-div'
 'slash-div': Deprecation<'slash-div'>;
 
 # `bogus-combinators`
-
-# Deprecation for leading, trailing, and repeated combinators.
-
-# Update the proposal for bogus combinators to say that it emits deprecation
-# warnings with ID 'bogus-combinators'.
+# Update the proposal for bogus combinators to say that it emits deprecation warnings with ID 'bogus-combinators'.
 
 'bogus-combinators': Deprecation<'bogus-combinators'>;
 
 # `strict-unary`
-
-# Deprecation for ambiguous `+` and `-` operators.
-
-# Update the proposal for strict unary operators to say that it emits deprecation
-# warnings with ID 'strict-unary'.
-
+# Update the proposal for strict unary operators to say that it emits deprecation warnings with ID 'strict-unary'.
 'strict-unary': Deprecation<'strict-unary'>;
 
 # `function-units`
-
-# Deprecation for passing invalid units to certain built-in functions.
-
-# Update the proposals for function units, random with units, and angle units to
-# say that they emit deprecation warnings with ID 'function-units'.
-
+# Update the proposals for function units, random with units, and angle units to say that they emit deprecation warnings with ID 'function-units'.
 'function-units': Deprecation<'function-units'>;
 
 # `duplicate-var-flags`
-
-# Deprecation for using multiple `!global` or `!default` flags on a single variable.
-
 # This deprecation was never explicitly listed in a proposal.
-
 'duplicate-var-flags': Deprecation<'duplicate-var-flags'>;
 
 # `user-authored`
-
 # Used for deprecations coming from user-authored code.
-
 'user-authored': Deprecation<'user-authored', 'user'>;
-```
-{void}
-```
-br
+
 # `id`
-~
 # A kebab-case ID for this deprecation.
-<br>
 $id: id;
 
-# The status of this deprecation.
+~~~~
+# Deprecation Key
 
-# 'active' means this deprecation is currently enabled. `deprecatedIn` is
+# 'active' - means this deprecation is currently enabled. `deprecatedIn` is
 #  non-null and `obsoleteIn` is null.
-# 'user' means this deprecation is from user-authored code. Both `deprecatedIn`
+
+# 'user' - means this deprecation is from user-authored code. Both `deprecatedIn`
 #  and `obsoleteIn` are null.
-# 'future' means this deprecation is not yet enabled. Both `deprecatedIn` and
+
+# 'future' - means this deprecation is not yet enabled. Both `deprecatedIn` and
 #  `obsoleteIn` are null.
-# 'obsolete' means this deprecation is now obsolete, as the feature it was for
+
+# 'obsolete' - means this deprecation is now obsolete, as the feature it was for
 #  has been fully removed. Both `deprecatedIn` and `obsoleteIn` are non-null.
 
 $status: status;
@@ -1012,14 +958,10 @@ $repeated string silence_deprecation = 15;
 
 $repeated string future_deprecation = 16;
 
+~~~~
+# Embedded Protocol, CompileRequest
+# `fatal_deprecation` - set of deprecation IDs to treat as fatal.
 
-# Embedded Protocol
-
-# CompileRequest
-
-# `fatal_deprecation`
-
-# A set of deprecation IDs to treat as fatal.
 ```
 :not(.foo) {...}
 .bar {@extend .foo}
@@ -1044,7 +986,7 @@ return "css"
 # Intuitively, this returns the result of executing: 
 
 .extender {@extend target}
-┌─ extendee {/* ... */}
+┌─$ extendee {/* ... */}
 
 
 # Its very easy to explicitly preserve the CSS behavior if its desired. A`CalculationInterpolation` will always produce a #`calc()` expression, so `calc(#{-5px})` can be used to force a calculation that wont return a number. In addition, the #`clamp()` syntax and `math.round()` function can be used to do build-time clamping and rounding if thats desired.
