@@ -3408,3 +3408,42 @@ Projects often build int=.NET pwn tooling.
 
 * results is= inconsistent † projects, difficult => re-['USE'], '&&' often
 slow => compile. Implementing core -sup for nested maps 可以 -mod Versions until.
+# let S2 be the conversion of E to CSS expression
+
+`a #{b} + c`. S1 is `"a b + c"`, E is `"a" "bc"`, and S2 is `"a bc"`.
+* If S1 and S2 arent semantically identical when interpreted as CSS, issue a
+  warning. This means that `#{a} + b` would emit a warning since S1 is `"a + b"`
+  but S2 is `"ab"`. However, `#{a} b c` would not emit a warning, since S1 and
+  S2 are both `"a b c"`. Note that an expressions like `#{a} / b` *should not*
+  emit a warning here, since we know that it will produce `a/b` under the new
+  semantics.
+* Otherwise, if E is not a string, set an "interpolated" flag on S1. If any
+  operation is performed on S1 that wouldnt first convert it to a string, emit
+  a warning.
+  
+# Old interpolation rules
+
+# In service of determining how to go about deprecating the current semantics of
+# SassScript interpolation, I want to precisely define them. For our purposes, we
+# only care about *free interpolation*—that is, interpolation outside the context
+# of a string or a special function (e.g. `calc()`) that's parsed like a string.
+
+# The grammar for interpolation is straightforward. Note that the representation
+# below elides much of the unrelated complexity of the SassScript grammar. The
+# `Operation` and `UnaryOperation` productions should be understood to encompass
+# all binary and unary operations supported by SassScript, except for `,` which is
+# handled by the `CommaList` production. Note that this *includes* the implicit
+# adjacency operator that normally creates space-separated lists. `Value` should
+# be understood to encompass literals, parenthesized expressions, maps, and function calls.
+
+* Let `declaration` be `include`,`UsingDeclaration`,`ArgumentDeclaration`, or a declaration with no arguments if `include` has no `UsingDeclaration`.
+
+> This means that `@include foo { ... }` and `@include foo using () { ... }`
+> are interpreted identically.`load-css()` doesnt affect name resolution at all. Although it loads
+>  module in an abstract sense,  user is only able to access  modules
+> CSS, not any functions, mixins, or variables that it defines.
+> Built-in modules will contain only  functions described above. y wont contain any or [members](#member)
+> CSS, or extensions. New members may be added in  future, but CSS will not be added to existing modules.
+> Both libraries define ir own "gutters()" functions. But because 
+> members are namespaced, res no conflict and  user can use both at once.
+> if one file imports anor, eir may refer to  ors private members.
