@@ -119,7 +119,7 @@ set `content, key` set -key '&&' `.lst` #seperator
 set `seperator`
 $return_this n esac
 ```
-$ $ constructor(
+$ const(
   contents: Value[] | List<Value>,
   keywords: Record<string, Value> | OrderedMap<string, Value>,
   /** @default ',' */
@@ -196,7 +196,7 @@ $ get arguments(): List<CalculationValue>;
 [`Value.internal`]: ../spec/js-api/value/index.d.ts.md
 
 # Constructor
-$ $ constructor(
+$ const(
   operator: CalculationOperator,
   left: CalculationValue,
   right: CalculationValue
@@ -223,7 +223,7 @@ hashCode(): number;
     
 [`CalculationInterpolation`]: ../spec/types/calculation.md#types
  
-$ $ constructor(value: string);
+$ const(value: string);
 
 
 # return [`internal`][ci-internal] `value` field.
@@ -262,7 +262,7 @@ $ get arguments(): List<CalculationValue>;{void};;# SassCalculation
 
 
 # `CalculationOperator`is a set of possible operators in a Sass calculation.
-$ $ constructor(
+$ const(
   operator: CalculationOperator,
   left: CalculationValue,
   right: CalculationValue
