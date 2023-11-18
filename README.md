@@ -49,8 +49,9 @@ nav {
 }
 ```
 
-![lgbt](https://github.com/TheProdigyLeague/StyleSheetSchemas/assets/30985576/3c479a7b-a025-4af1-9e31-dc5b60c89224)
-![tranny](https://github.com/TheProdigyLeague/StyleSheetSchemas/assets/30985576/eb925494-a054-444c-8dfe-4155cb39d286)
+![lgbt](https://github.com/TheProdigyLeague/StyleSheetSchematics/assets/30985576/8d9f9cc1-520d-4518-98c3-c7be6bc19468)
+![tranny](https://github.com/TheProdigyLeague/StyleSheetSchematics/assets/30985576/8d306df2-b976-479e-adfc-f7039ac2198f)
+
 
 #### How to ```--install```
 On Linux, Mac, and Windows, End-Usr ```--install``` Sass. Github is = > src of ```--install``` pkg for your OS sys. Next, include it in PATH. Nothing more needs to be ```--install```, and no external dependencies.
