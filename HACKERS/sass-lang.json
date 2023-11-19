@@ -1,0 +1,180 @@
+/* emulated with DevTools */
+{
+"domain": "github.com",
+              "expires": "2023-11-18T10:57:46.826Z",
+              "httpOnly": true,
+              "secure": true,
+              "sameSite": "Lax"
+            },
+            {
+              "name": "saved_user_sessions",
+              "value": "30985576%3ACSYyczLCCmsYIMHHAiDg5xhWnG-7PLfQ5m6CTgK78kIAHAQj",
+              "path": "/",
+              "domain": "github.com",
+              "expires": "2024-02-16T04:00:07.231Z",
+              "httpOnly": true,
+              "secure": true,
+              "sameSite": "Lax"
+            },
+            {
+              "name": "user_session",
+              "value": "CSYyczLCCmsYIMHHAiDg5xhWnG-7PLfQ5m6CTgK78kIAHAQj",
+              "path": "/",
+              "domain": "github.com",
+              "expires": "2023-12-02T04:00:07.232Z",
+              "httpOnly": true,
+              "secure": true,
+              "sameSite": "Lax"
+            },
+            {
+              "name": "__Host-user_session_same_site",
+              "value": "CSYyczLCCmsYIMHHAiDg5xhWnG-7PLfQ5m6CTgK78kIAHAQj",
+              "path": "/",
+              "domain": "github.com",
+              "expires": "2023-12-02T04:00:07.232Z",
+              "httpOnly": true,
+              "secure": true,
+              "sameSite": "Strict"
+            }
+           {
+              "name": "cache-control",
+              "value": "max-age=0, private, must-revalidate"
+            },
+            {
+              "name": "set-cookie",
+              "value": "has_recent_activity=1; path=/; expires=Sat, 18 Nov 2023 10:57:51 GMT; secure; HttpOnly; SameSite=Lax"
+            },
+            {
+              "name": "set-cookie",
+              "value": "_gh_sess=TKLN05yGJYG3pBwGQywr5MLE9YGRLs%2ByrZ4MJ4mHyeFXUEAmIcS%2BI2Lh0A7BX91mbZZHSH7cIVhTEF2rIPHhmVsHvY713zfraBTp4XG1%2B7RZm0icheItIfBPt0BCVkEndzlLDeswPL3y7u4IGmdQ2LPv%2Fk0lBUz6Msu4h57BGO5NPgL9FE%2BYHktGuxQr43Tz%2B2Fx8TqO9163DoRaOHdUBWp%2B7OTuHKcgNlwq5dYWIIaDLkf9cnCWzGE7uZyw0QOAhMT6bTUI5USvFCBhAcnOgj4RWmI74p9Wiw1tXNpT2%2BmhX%2BB8T5T93lVf4giYE%2FIqNX0au%2FkPe3M44GUHp2TpbC67FYInUn6C13SffN4rE3rnQ4pZHN%2BmDWQhikgDnh%2BByaX%2BZFaQVUhlUQER1uL2U8K44OI7PTI0LfqvvKHXm2O%2BSJ7pZZp0sBmfjYxYIyaeQ7L1kzQnT1mdGnw3SARlZ8KsI4bSE4VmCIAwU0qtNl0lHmlF%2Bry4MvDtjhye86f7objMfuHRBXVANYkwN0q9MIX%2Fui79Xw3g1%2Bjh%2F6MiYq9amS3UQn2syTwo7pH2KJKoTIBhLdPa63Ap5QxlEEHehiSNViy%2FS%2BbZnRN87psyreC%2FKjQklHzmM7%2BDC9OR2eiW7ijm%2BYtlX2149BlPnvtt7bFA76bFg4XWZLyqmoYTvnxLjcPfy0CZBFafVapc4TgrmDQrkFncVJS1sLHyaDGZ1p9zRqU0liA9E84j%2FI419mSXZoUYkln5gh5Mcl96BUwz0ObeY4Z6KUOaJ72U0HuHkhrWfBwckV32yAknIhJNwrQ545vrRTPpxcp9sD9TsF%2F%2F--5K6xfvqGtfR8N1ov--I1oy4wkvWygXZW7XyyYtGQ%3D%3D; path=/; secure; HttpOnly; SameSite=Lax"
+            },
+            {
+              "name": "strict-transport-security",
+              "value": "max-age=31536000; includeSubdomains; preload"
+            },
+            {
+              "name": "x-frame-options",
+              "value": "deny"
+            },
+            {
+              "name": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "name": "x-xss-protection",
+              "value": "0"
+            }
+            {
+              "name": "referrer-policy",
+              "value": "origin-when-cross-origin, strict-origin-when-cross-origin"
+            },
+            {
+              "name": "content-security-policy",
+              "value": "default-src 'none'; base-uri 'self'; child-src github.com/assets-cdn/worker/ gist.github.com/assets-cdn/worker/; connect-src 'self' uploads.github.com www.githubstatus.com collector.github.com raw.githubusercontent.com api.githubcopilot.com api.github.com github-cloud.s3.amazonaws.com github-production-repository-file-5c1aeb.s3.amazonaws.com github-production-upload-manifest-file-7fdce7.s3.amazonaws.com github-production-user-asset-6210df.s3.amazonaws.com cdn.optimizely.com logx.optimizely.com/v1/events objects-origin.githubusercontent.com *.actions.githubusercontent.com wss://*.actions.githubusercontent.com productionresultssa0.blob.core.windows.net/ productionresultssa1.blob.core.windows.net/ productionresultssa2.blob.core.windows.net/ productionresultssa3.blob.core.windows.net/ productionresultssa4.blob.core.windows.net/ productionresultssa5.blob.core.windows.net/ productionresultssa6.blob.core.windows.net/ productionresultssa7.blob.core.windows.net/ productionresultssa8.blob.core.windows.net/ productionresultssa9.blob.core.windows.net/ github-production-repository-image-32fea6.s3.amazonaws.com github-production-release-asset-2e65be.s3.amazonaws.com insights.github.com wss://alive.github.com; font-src github.githubassets.com; form-action 'self' github.com gist.github.com objects-origin.githubusercontent.com; frame-ancestors 'none'; frame-src viewscreen.githubusercontent.com notebooks.githubusercontent.com support.github.com; img-src 'self' data: github.githubassets.com media.githubusercontent.com camo.githubusercontent.com identicons.github.com avatars.githubusercontent.com github-cloud.s3.amazonaws.com objects.githubusercontent.com secured-user-images.githubusercontent.com/ user-images.githubusercontent.com/ private-user-images.githubusercontent.com opengraph.githubassets.com github-production-user-asset-6210df.s3.amazonaws.com customer-stories-feed.github.com spotlights-feed.github.com objects-origin.githubusercontent.com *.githubusercontent.com; manifest-src 'self'; media-src github.com user-images.githubusercontent.com/ secured-user-images.githubusercontent.com/ private-user-images.githubusercontent.com github-production-user-asset-6210df.s3.amazonaws.com; script-src github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; upgrade-insecure-requests; worker-src github.com/assets-cdn/worker/ gist.github.com/assets-cdn/worker/"
+            },
+            {
+              "name": "content-encoding",
+              "value": "gzip"
+            },
+            {
+              "name": "x-github-request-id",
+              "value": "B690:2F9E:82B171:B13568:65588A9E"
+            }
+          ]
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": ":path",
+              "value": "/github/collect"
+            },
+            {
+              "name": "content-length",
+              "value": "1231"
+            },
+            {
+              "name": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "cache-control",
+              "value": "no-cache"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"Google Chrome\";v=\"93\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"93\""
+            },
+            {
+              "name": "dnt",
+              "value": "1"
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?1"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.107 Mobile Safari/537.36"
+            }[[            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": ":path",
+              "value": "/github/collect"
+            },
+            {
+              "name": "content-length",
+              "value": "1231"
+            },
+            {
+              "name": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "cache-control",
+              "value": "no-cache"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"Google Chrome\";v=\"93\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"93\""
+            },
+            {
+              "name": "dnt",
+              "value": "1"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.107 Mobile Safari/537.36"
+            }
+                            "name": "sec-fetch-dest",
+              "value": "manifest"
+            },
+            {
+              "name": "referer",
+              "value": "https://github.com/sass/dart-sass/issues/2079"
+            },
+            {
+              "name": "accept-encoding",
+              "value": "gzip, deflate, br"
+            },
+            {
+              "name": "accept-language",
+              "value": "en-US,en;q=0.9"
+            },
+            {
+              "name": "cookie",
+              "value": "_octo=GH1.1.567203216.1699217093; tz=America%2FLima; _device_id=76dfc5b00ac991fafa7c34ef32613a24; tz=America%2FLima; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; fileTreeExpanded=false; preferred_color_mode=light; has_recent_activity=1; saved_user_sessions=30985576%3ACSYyczLCCmsYIMHHAiDg5xhWnG-7PLfQ5m6CTgK78kIAHAQj; user_session=CSYyczLCCmsYIMHHAiDg5xhWnG-7PLfQ5m6CTgK78kIAHAQj; __Host-user_session_same_site=CSYyczLCCmsYIMHHAiDg5xhWnG-7PLfQ5m6CTgK78kIAHAQj; logged_in=yes; dotcom_user=TheProdigyLeague; _gh_sess=ZXQP36p7xBrHA66iLP3z1e7O5IqkEXUCbOsl%2BEgb9T3ceInUVSAQx23aFp%2Bh48qv%2F9hMRDql5cmzi9icD3Z5upd5VzZyOBNWJ8EmGscRYS%2B30mxFLW2JH8vsXe2S4mPmbG5NMMDr7pU8a7b%2B3H2U8Or8T5M1wERwb7zO1IZETp9pQTGltJeKXpY95%2FmdZkE%2BFcqkueG6oUCJEgPICocpZiywnVv0ZgWrx9LyVBfuu0FjMyUv1gMg%2FSiEc7oQ06cutyctxHzVt7HYyATajNA3YImud9iaTTnB57cdPEQxYf6u8XuXGk8Nk9tHcztRDUOu3Aw%2Bd6nmKv%2FSNgFGCWNra8d%2BzP9PxST7CFJTjjTF%2FRNN71nZgnmYlCp7TqJCMD2rr%2Bcsy1kzONdCPzm%2FNl39iREHxNTg2Y0SN5oH7%2FrXPJKRcLY7TmMmFAH6h%2F9SCLfWyTQnGe4OsvBgp0i6mvGSqzMpfVsT%2FxbTjwEwsN0NoJkRSZpTnBm8cy1Izz4ArrrYG6oPZo%2FAgHpi1PcteBnUdRIeU9iG8R%2B7yUrzM4rhic0FGXJSkCEosPhG4Hq8qMAjPDYD1EeePJVSt2R79Lm7ZhUCxgzffWXT2bbGUq4xpCAxoUqzaSWwkfwawU9WUY3xr2wSOugmEVi67BBWktZWxFD9a3%2BQzXFaKE2dgiKXq2DUZLFG9xca1gDDgGGQEVLdr7kDftM7D9mjuM0UkLH7bUK7M%2FXo9FWfd8YkEJzj%2FecoE3EPQCh14r6X0EtAo9gHZd6pBOUE3A9HWI%2Fwj2xLRrgn4hDssJeEAFwWlRSNe7WHuxzQje1%2BmPcMNMVY7H8F--f8rxyTq5H8w53mp6--b00D%2BsIdCSs650H2ZN74AA%3D%3D"
+            }
+          ],
+          "queryString": [],
+          "cookies": []
+            {
+              "name": "referrer-policy",
+              "value": "origin-when-cross-origin, strict-origin-when-cross-origin"
+            },
+            {
+              "name": "content-security-policy",
+              "value": "default-src 'none'; base-uri 'self'; child-src github.com/assets-cdn/worker/ gist.github.com/assets-cdn/worker/; connect-src 'self' uploads.github.com www.githubstatus.com collector.github.com raw.githubusercontent.com api.githubcopilot.com api.github.com github-cloud.s3.amazonaws.com github-production-repository-file-5c1aeb.s3.amazonaws.com github-production-upload-manifest-file-7fdce7.s3.amazonaws.com github-production-user-asset-6210df.s3.amazonaws.com cdn.optimizely.com logx.optimizely.com/v1/events objects-origin.githubusercontent.com *.actions.githubusercontent.com wss://*.actions.githubusercontent.com productionresultssa0.blob.core.windows.net/ productionresultssa1.blob.core.windows.net/ productionresultssa2.blob.core.windows.net/ productionresultssa3.blob.core.windows.net/ productionresultssa4.blob.core.windows.net/ productionresultssa5.blob.core.windows.net/ productionresultssa6.blob.core.windows.net/ productionresultssa7.blob.core.windows.net/ productionresultssa8.blob.core.windows.net/ productionresultssa9.blob.core.windows.net/ github-production-repository-image-32fea6.s3.amazonaws.com github-production-release-asset-2e65be.s3.amazonaws.com insights.github.com wss://alive.github.com; font-src github.githubassets.com; form-action 'self' github.com gist.github.com objects-origin.githubusercontent.com; frame-ancestors 'none'; frame-src viewscreen.githubusercontent.com notebooks.githubusercontent.com support.github.com; img-src 'self' data: github.githubassets.com media.githubusercontent.com camo.githubusercontent.com identicons.github.com avatars.githubusercontent.com github-cloud.s3.amazonaws.com objects.githubusercontent.com secured-user-images.githubusercontent.com/ user-images.githubusercontent.com/ private-user-images.githubusercontent.com opengraph.githubassets.com github-production-user-asset-6210df.s3.amazonaws.com customer-stories-feed.github.com spotlights-feed.github.com objects-origin.githubusercontent.com *.githubusercontent.com; manifest-src 'self'; media-src github.com user-images.githubusercontent.com/ secured-user-images.githubusercontent.com/ private-user-images.githubusercontent.com github-production-user-asset-6210df.s3.amazonaws.com; script-src github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; upgrade-insecure-requests; worker-src github.com/assets-cdn/worker/ gist.github.com/assets-cdn/worker/"
+            }
