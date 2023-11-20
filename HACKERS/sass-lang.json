@@ -1,4 +1,5 @@
 /* emulated with DevTools */
+[{{
 {
 "domain": "github.com",
               "expires": "2023-11-18T10:57:46.826Z",
@@ -177,4 +178,156 @@
             {
               "name": "content-security-policy",
               "value": "default-src 'none'; base-uri 'self'; child-src github.com/assets-cdn/worker/ gist.github.com/assets-cdn/worker/; connect-src 'self' uploads.github.com www.githubstatus.com collector.github.com raw.githubusercontent.com api.githubcopilot.com api.github.com github-cloud.s3.amazonaws.com github-production-repository-file-5c1aeb.s3.amazonaws.com github-production-upload-manifest-file-7fdce7.s3.amazonaws.com github-production-user-asset-6210df.s3.amazonaws.com cdn.optimizely.com logx.optimizely.com/v1/events objects-origin.githubusercontent.com *.actions.githubusercontent.com wss://*.actions.githubusercontent.com productionresultssa0.blob.core.windows.net/ productionresultssa1.blob.core.windows.net/ productionresultssa2.blob.core.windows.net/ productionresultssa3.blob.core.windows.net/ productionresultssa4.blob.core.windows.net/ productionresultssa5.blob.core.windows.net/ productionresultssa6.blob.core.windows.net/ productionresultssa7.blob.core.windows.net/ productionresultssa8.blob.core.windows.net/ productionresultssa9.blob.core.windows.net/ github-production-repository-image-32fea6.s3.amazonaws.com github-production-release-asset-2e65be.s3.amazonaws.com insights.github.com wss://alive.github.com; font-src github.githubassets.com; form-action 'self' github.com gist.github.com objects-origin.githubusercontent.com; frame-ancestors 'none'; frame-src viewscreen.githubusercontent.com notebooks.githubusercontent.com support.github.com; img-src 'self' data: github.githubassets.com media.githubusercontent.com camo.githubusercontent.com identicons.github.com avatars.githubusercontent.com github-cloud.s3.amazonaws.com objects.githubusercontent.com secured-user-images.githubusercontent.com/ user-images.githubusercontent.com/ private-user-images.githubusercontent.com opengraph.githubassets.com github-production-user-asset-6210df.s3.amazonaws.com customer-stories-feed.github.com spotlights-feed.github.com objects-origin.githubusercontent.com *.githubusercontent.com; manifest-src 'self'; media-src github.com user-images.githubusercontent.com/ secured-user-images.githubusercontent.com/ private-user-images.githubusercontent.com github-production-user-asset-6210df.s3.amazonaws.com; script-src github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; upgrade-insecure-requests; worker-src github.com/assets-cdn/worker/ gist.github.com/assets-cdn/worker/"
+            }
+            {
+              "name": "_gh_sess",
+              "value": "qG%2BchZWf4NgDff7EWS%2F8fn6HJTu9guJBzNTi0auA7cM8vRMP%2BRufSu%2B775PG6p0qLpSmN1mVqFmLVtr7nkyrhNoUu42heKCWhH2naWtveP99pyaDNhVJ69iGvSv8wi7fYK%2BRjmmZt61M9hhMWJvnd7YHTXs%2B9JsDJX%2F1ebDv1vvTASQFvexQLxw6p2IS0Cuk2P1M7azNJaqI%2BuT0MAvxbT3vO0HmoMAyOi0L6bIaJFsmRDLT5mdTBHCcHY1lisoAG%2FMDyDx3qj6%2Fl2GUmgGQZIBHf9zo2h7DyqwACwDHeU%2FH75ZVJ34OFI33CNJzT7McAOsM6%2F%2BvOSuMs2O3%2BbiHXtk8QtIV3CGJEW3evyKe%2FJ8x18PTo4HMGfx9pDfdWd%2BI9%2F5nJ8NriwCmhn0OuwQzjzfCwvKS2tW7SQmeGfpgKM9wQ2u8nTJlVAT7QYpkGuR0eQ6P32ZgDCzPR7eirQHRNzmPpoklmuAyvS662UqHHEsn2x9VjiOHC7dpicSOYkr4W%2Bvb9CfKDjIj%2F8iHk3Vr%2Bk7xDYvYM0d36GE92LQd8IPj0qmexAVB1nc6oa2m53HVXW9S1J9xL7cNkf23wHaf4wLfyaCpkfpTyJozFl3krj5JTWRixg%2FK9Iha8HWgFUXHcpBMF8GUBOZWRmuzcpLilbc6pIZcLmeQ408LGg11lbgwAQuPfYzkbZOrVhgiohd0r7c8PqKXMxW7Orn22PlBUi5LPUK6d1kmW6MqRxnW9YlNFyTnwUYntvJL9g5jaYt6M1gKo%2BpFcE4CC14i8GKWtc8yI%2B9iXLuoXtjitP1qeHRUUXltoAmJHr%2BKp5Hlez8t--76T64H%2FZC4HNvaLV--b0TOgidUMe6fpeAom6NaYQ%3D%3D",
+              "path": "/",
+              "domain": "github.com",
+              "expires": null,
+              "httpOnly": true,
+              "secure": true,
+              "sameSite": "Lax"
+            }
+          "headersSize": -1,
+          "bodySize": 1326,
+          "postData": {
+            "mimeType": "text/plain;charset=UTF-8",
+            "text": "{\"client_id\":\"567203216.1699217093\",\"events\":[{\"page\":\"https://github.com/sass/dart-sass/issues/2079\",\"title\":\"Vite + SCSS = DevTools are very slow · Issue #2079 · sass/dart-sass\",\"context\":{\"actor_id\":\"30985576\",\"actor_login\":\""
+TheProdigyLeague\",\"actor_hash\":\"52b7d3bb8a2cd23637d36acb75bcc935b02faefde33690e56c9d90382cf5bdf8\",\"user_id\":\"317889\",\"user_login\":\"sass\",\"repository_id\":\"72474275\",\"repository_nwo\":\"sass/dart-sass\",\"repository_public\":\"true\",\"repository_is_fork\":\"false\",\"repository_network_root_id\":\"72474275\",\"repository_network_root_nwo\":\"sass/dart-sass\",\"referrer\":\"https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fnotifications\",\"request_id\":\"B690:2F9E:82A8FF:B12991:65588A98\",\"visitor_id\":\"2436119264605241029\",\"region_edge\":\"iad\",\"region_render\":\"iad\",\"staff\":\"false\",\"category\":\"Global navigation\",\"action\":\"NOTIFICATIONS_HEADER\",\"label\":\"icon:unread\"},\"type\":\"analytics.click\"}],\"request_context\":{\"referrer\":\"https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fnotifications\",\"user_agent\":\"Mozilla/5.0 (X11; CrOS x86_64 14092.77.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.107 Safari/537.36\",\"screen_resolution\":\"1241x698\",\"browser_resolution\":\"1002x698\",\"browser_languages\":\"en-US,en\",\"pixel_ratio\":1.100000023841858,\"timestamp\":1700301945059,\"tz_seconds\":-18000}}"
+          }
+              {
+                "functionName": "prepareToRender",
+                "scriptId": "140",
+                "url": "https://github.githubassets.com/assets/vendors-node_modules_github_turbo_dist_turbo_es2017-esm_js-ec51a0f6e881.js",
+                "lineNumber": 14,
+                "columnNumber": 24141
+              },
+              {
+                "functionName": "prepareToRenderSnapshot",
+                "scriptId": "140",
+                "url": "https://github.githubassets.com/assets/vendors-node_modules_github_turbo_dist_turbo_es2017-esm_js-ec51a0f6e881.js",
+                "lineNumber": 0,
+                "columnNumber": 17547
+              },
+              {
+                "functionName": "render",
+                "scriptId": "140",
+                "url": "https://github.githubassets.com/assets/vendors-node_modules_github_turbo_dist_turbo_es2017-esm_js-ec51a0f6e881.js",
+                "lineNumber": 0,
+                "columnNumber": 16931
+              },
+              {
+                "functionName": "renderPage",
+                "scriptId": "140",
+                "url": "https://github.githubassets.com/assets/vendors-node_modules_github_turbo_dist_turbo_es2017-esm_js-ec51a0f6e881.js",
+                "lineNumber": 14,
+                "columnNumber": 27301
+              }
+            {
+              "name": "access-control-allow-methods",
+              "value": "GET"
+            },
+            {
+              "name": "access-control-max-age",
+              "value": "3600"
+            },
+            {
+              "name": "cache-control",
+              "value": "public, max-age=31536000"
+            },
+            {
+              "name": "last-modified",
+              "value": "Fri, 17 Nov 2023 20:29:18 GMT"
+            },
+            {
+              "name": "etag",
+              "value": "\"efd8e91ba2ddda7273bab749608d0a9a\""
+            },
+            {
+              "name": "content-type",
+              "value": "application/javascript"
+            },
+            {
+              "name": "server",
+              "value": "AmazonS3"
+            },
+            {
+              "name": "content-encoding",
+              "value": "gzip"
+            }
+        "serverIPAddress": "185.199.110.154",
+        "startedDateTime": "2023-11-18T10:05:49.103Z",
+        "time": 3163.6149999685585,
+        "timings": {
+          "blocked": 36.814999903164804,
+          "dns": -1,
+          "ssl": -1,
+          "connect": -1,
+          "send": 10.264,
+          "wait": 2212.2380000277235,
+          "receive": 904.2980000376701,
+          "_blocked_queueing": 22.323999903164804
+        }
+[[]]{}{}
+     "_priority": "Low",
+        "_resourceType": "script",
+        "cache": {},
+        "connection": "1123059",
+        "request": {
+          "method": "GET",
+          "url": "https://github.githubassets.com/assets/notifications-v2-50c20ef018b3.js",
+          "httpVersion": "http/2.0",
+          "headers": [
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":authority",
+              "value": "github.githubassets.com"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": ":path",
+              "value": "/assets/notifications-v2-50c20ef018b3.js"
+            },
+            {
+              "name": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "cache-control",
+              "value": "no-cache"
+            }
+                        {
+              "name": "cache-control",
+              "value": "public, max-age=31536000"
+            },
+            {
+              "name": "etag",
+              "value": "\"e3ccda86293c91249789420702e8fec2\""
+            },
+            {
+              "name": "content-type",
+              "value": "application/javascript"
+            },
+            {
+              "name": "server",
+              "value": "AmazonS3"
+            },
+            {
+              "name": "content-encoding",
+              "value": "gzip"
+            },
+            {
+              "name": "via",
+              "value": "1.1 varnish, 1.1 varnish"
+            },
+            {
+              "name": "accept-ranges",
+              "value": "bytes"
             }
