@@ -1,0 +1,106 @@
+
+{
+  "log": {
+    "version": "1.2",
+    "creator": {
+      "name": "WebInspector",
+      "version": "537.36"
+    },
+    "pages": [
+      {
+        "startedDateTime": "2023-11-18T10:11:09.954Z",
+        "id": "page_1",
+        "title": "https://github.com/contact/report-abuse?report=nex3+%28user%29",
+        "pageTimings": {
+          "onContentLoad": 18864.177999901585,
+          "onLoad": 20998.401999939233
+        }
+      },
+      {
+        "startedDateTime": "2023-11-18T10:11:31.002Z",
+        "id": "page_2",
+        "title": "https://support.github.com/session/callback?browser_session_id=68e67353080863fe2368aa3f5831065fdae749f7c51de08158accf7b698d3b73&code=1b6ba9621464b0c5fbac&state=a17965c6d8d42b6b8c61ba9e5024de90",
+        "pageTimings": {
+          "onContentLoad": 18149.993000086397,
+          "onLoad": 18242.723000003025
+        }
+      },
+      {
+        "startedDateTime": "2023-11-18T10:12:48.517Z",
+        "id": "page_3",
+        "title": "https://github.com/notifications",
+        "pageTimings": {
+          "onContentLoad": 18217.433999991044,
+          "onLoad": 21944.543999969028
+        }
+      }
+              "_priority": "High",
+        "_resourceType": "fetch",
+        "cache": {},
+        "connection": "1123037",
+        "request": {
+          "method": "GET",
+          "url": "https://github.com/notifications/thread_subscription?repository_id=72474275&thread_class=Issue&thread_id=1887975953",
+          "httpVersion": "http/2.0",
+          "headers": [
+            {
+              "name": ":method",
+              "value": "GET"
+            },
+            {
+              "name": ":authority",
+              "value": "github.com"
+            },
+            {
+              "name": ":scheme",
+              "value": "https"
+            },
+            {
+              "name": ":path",
+              "value": "/notifications/thread_subscription?repository_id=72474275&thread_class=Issue&thread_id=1887975953"
+            },
+            {
+              "name": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "name": "cache-control",
+              "value": "no-cache"
+            }
+            {
+           "name": "sec-ch-ua",
+              "value": "\"Google Chrome\";v=\"93\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"93\""
+            },
+            {
+              "name": "accept",
+              "value": "text/html"
+            },
+            {
+              "name": "dnt",
+              "value": "1"
+            },
+            {
+              "name": "x-requested-with",
+              "value": "XMLHttpRequest"
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?1"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (Linux; Android 6.0.1; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.107 Mobile Safari/537.36"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Android\""
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "same-origin"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            }
+            
